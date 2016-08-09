@@ -7,31 +7,12 @@ import { Component, ViewEncapsulation } from '@angular/core';
         './app.style.css'
     ],
     template: `
-      <nav>
-        <span>
-          <a [routerLink]=" ['./'] ">
-            Index
-          </a>
-        </span>
-      |
-        <span>
-          <a [routerLink]=" ['./home'] ">
-            Home
-          </a>
-        </span>
-      </nav>
-      <main>
-        <router-outlet></router-outlet>
-      </main>
+      <div>Mikkel Damm</div>
     `
 })
 export class App {
   
     constructor() {
 
-    }
-
-    ngOnInit() {
-        console.log('Initial App State');
     }
 }
