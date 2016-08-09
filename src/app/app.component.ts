@@ -7,11 +7,15 @@ import { Component, ViewEncapsulation } from '@angular/core';
         './app.style.css'
     ],
     template: `
-      <div>Mikkel Damm</div>
+        <div class="">
+            <div class="">
+                
+            </div>
+        </div>
     `
 })
 export class App {
-  
+
     constructor() {
 
     }
