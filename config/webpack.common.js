@@ -46,6 +46,10 @@ module.exports = {
                 loader: 'json-loader'
             },
             {
+                test: /\.scss$/,
+                loaders: ['to-string-loader', 'css-loader', 'sass-loader']
+            },
+            {
                 test: /\.css$/,
                 loaders: ['to-string-loader', 'css-loader']
             },
