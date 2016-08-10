@@ -1,17 +1,12 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
-import { Select } from './components';
+import { Container, Select } from './components';
 
 @Component({
     selector: 'cbs-app',
     encapsulation: ViewEncapsulation.None,
-    styles: [ require('./app.css') ],
+    styles: [ require('./app.scss') ],
     template: require('./app.html'),
-    directives: [ Select ]
+    directives: [ Container, Select ]
 })
-export class App {
-
-    constructor() {
-
-    }
-}
+export class App {}
