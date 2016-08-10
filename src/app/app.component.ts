@@ -1,18 +1,13 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
+import { Select } from './components';
+
 @Component({
-    selector: 'app',
+    selector: 'cbs-app',
     encapsulation: ViewEncapsulation.None,
-    styleUrls: [
-        './app.style.css'
-    ],
-    template: `
-        <div class="">
-            <div class="">
-                
-            </div>
-        </div>
-    `
+    styles: [ require('./app.css') ],
+    template: require('./app.html'),
+    directives: [ Select ]
 })
 export class App {
 
