@@ -50,7 +50,7 @@ module.exports = webpackMerge(commonConfig, {
         }),
         new NormalModuleReplacementPlugin(
             /angular2-hmr/,
-            helpers.root('config/modules/angular2-hmr-prod.js')
+            function() {}
         ),
         new CompressionPlugin({
             regExp: /\.css$|\.html$|\.js$|\.map$/,

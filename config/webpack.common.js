@@ -4,7 +4,6 @@ const helpers = require('./helpers');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
-const HtmlElementsPlugin = require('./html-elements-plugin');
 
 const METADATA = {
     title: 'CBS Career fair',
@@ -74,9 +73,6 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: 'src/index.html',
             chunksSortMode: 'dependency'
-        }),
-        new HtmlElementsPlugin({
-            headTags: require('./head-config.common')
         })
     ],
     node: {
