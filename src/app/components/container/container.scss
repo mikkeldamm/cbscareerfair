@@ -1,0 +1,7 @@
+@import "../../../mixins/flex";
+
+:host {
+    @include flex(1);
+    border: 6px solid #c67270;
+    margin: 2em;
+}
