@@ -6,15 +6,15 @@
     @include flex(1);
     @include flex-direction(column);
 
-    max-width: 20em;
+    max-width: 30em;
 }
 
 .cbs-action {
 
-    font-size: 1.2em;
+    font-size: 1.3em;
     padding: 1em;
-    margin-bottom: 1.5em;
-    border-bottom: 1px solid #efefef; //1px solid #d87a2a;
+    margin-bottom: 2em;
+    border-bottom: 1px solid #efefef;
     box-shadow: 0px 3px 4px -3px rgba(0, 0, 0, 0.1);
     cursor: pointer;
 
@@ -22,7 +22,7 @@
         display: block;
         position: relative;
     }
-    
+
     i {
         line-height: 1em;
         position: absolute;
@@ -40,17 +40,14 @@
             }
         }
     }
-
+    
     &:hover {
 
         i {
             transform: translateX(6px);
 
-            svg {
-
-                polygon {
-                    fill: #d87a2a;
-                }
+            svg polygon {
+                fill: #d87a2a;
             }
         }
     }
