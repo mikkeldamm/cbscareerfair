@@ -1,4 +1,5 @@
 @import "../mixins/flex";
+@import "../mixins/breakpoint";
 
 @font-face {
     font-family: "cbs-sans-regular";
@@ -26,4 +27,13 @@ body {
 .cbs-root {
     @extend %flexbox;
     height: 100%;
+}
+
+.cbs-frame {
+    @include flex(1);
+    border: 10px solid #d87a2a;
+
+    @include breakpoint(large) {
+        margin: 2em;
+    }
 }
