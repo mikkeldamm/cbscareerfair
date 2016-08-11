@@ -2,8 +2,28 @@
     <div class="cbs-frame">
         <cbs-title></cbs-title>
         <div class="cbs-main">
-            <cbs-actions></cbs-actions>
-            <cbs-select *ngIf="false"></cbs-select>
+            <div class="cbs-flex" [ngClass]="{hide: hideActions}">
+                <cbs-actions
+                    [position]="actionsModel.position" 
+                    [profile]="actionsModel.profile"
+                    (onSelectPosition)="selectPosition()"
+                    (onSelectProfile)="selectProfile()"
+                ></cbs-actions>
+            </div>
+            <div class="cbs-flex" [ngClass]="{hide: hideSelect}">
+                <cbs-select 
+                    [items]="selectItems"
+                    (onBack)="backToMain()"
+                    (onItemSelected)="selectItemSelected($event)"
+                ></cbs-select>
+            </div>
+            <div class="cbs-flex" [ngClass]="{hide: hideCompanies}">
+                <cbs-companies
+                    [position]="actionsModel.position" 
+                    [profile]="actionsModel.profile"
+                    (onBack)="backToMain()"
+                ></cbs-companies>
+            </div>
         </div>
     </div>
 </div>

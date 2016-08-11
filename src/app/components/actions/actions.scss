@@ -54,6 +54,11 @@
 
     .cb-action__text {
         display: none;
+        padding-right: 1em;
+
+        svg path {
+            fill: #789e3e;
+        }
     }
 
     &.active {
