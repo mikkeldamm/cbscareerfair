@@ -1,0 +1,33 @@
+{
+    "positions": [
+        "Student jobs", 
+        "Project and thesis collaboration", 
+        "Internships",
+        "Graduate/Trainee positions",
+        "Full time positions"
+    ],
+    "profiles": [
+        "Economics, Finance and Accounting",
+        "Business Management and Law",
+        "Marketing, Communication and Language",
+        "IT, Innovation and Entrepreneurship",
+        "HR and Organisational Development"
+    ],
+    "companies": [
+        {
+            "name": "Accenture",
+            "positions": [0, 3, 4],
+            "profiles": [0, 1, 2, 3, 4]
+        },
+        {
+            "name": "Adsensus",
+            "positions": [0],
+            "profiles": [0, 1, 2, 3, 4]
+        },
+        {
+            "name": "AplhaSights",
+            "positions": [2, 3, 4],
+            "profiles": [0, 1, 2, 3]
+        }
+    ]
+}

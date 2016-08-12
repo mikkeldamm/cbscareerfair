@@ -16,7 +16,7 @@
 
 html, body{
     height: 100%;
-    font-family: Arial, Helvetica, sans-serif
+    font-family: 'cbs-sans-regular', Arial, Helvetica, sans-serif
 }
 
 body {
@@ -27,6 +27,7 @@ body {
 .cbs-root {
     @extend %flexbox;
     height: 100%;
+    min-height: 900px;
 }
 
 .cbs-frame {

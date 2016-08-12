@@ -10,19 +10,25 @@ export class Select {
     @Input() items: string[] = [];
 
     @Output() onBack = new EventEmitter();
-    @Output() onItemSelected = new EventEmitter<string>();
+    @Output() onItemSelected = new EventEmitter<SelectItem>();
 
     constructor() {
 
+        
     }
 
-    selectItem(title) {
+    selectItem(title, index) {
 
-        this.onItemSelected.emit(title);
+        this.onItemSelected.emit({ title: title, index: index});
     }
 
     goBack() {
 
         this.onBack.emit({});
     }
+}
+
+export interface SelectItem {
+    title: string;
+    index: number;
 }

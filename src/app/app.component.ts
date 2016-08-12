@@ -1,28 +1,35 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { Observable } from 'rxjs';
 
-import { Title, Actions, Select } from './components';
+import { Title, Actions, Select, SelectItem, Companies } from './components';
+
+import { StoreService, StateService } from '../store';
 
 @Component({
     selector: 'cbs-app',
     encapsulation: ViewEncapsulation.None,
     styles: [ require('./app.scss') ],
     template: require('./app.html'),
-    directives: [ Title, Actions, Select ]
+    directives: [ Title, Actions, Select, Companies ]
 })
 export class App {
 
     selectItems: string[] = [];
-
     action: Action;
-    actionsModel: ActionsModel;
 
     hideActions: boolean = false;
     hideSelect: boolean = true;
     hideCompanies: boolean = true;
 
-    constructor() {
+    constructor(private _store: StoreService, private _state: StateService) {
 
-        this.actionsModel = new ActionsModel();
+        Observable
+            .forkJoin(this._state.position, this._state.profile)
+            .subscribe(items => {
+
+                this._state.setSelected(items[0], items[1]);
+                this.showCompanies();
+            });
     }
 
     selectPosition() {
@@ -30,7 +37,7 @@ export class App {
         this.action =  Action.position;
         this.hideActions = true;
         this.hideSelect = false;
-        this.selectItems = ['Position1','Position2','Position3','Position4','Position5'];
+        this.selectItems = this._store.positions;
     }
 
     selectProfile() {
@@ -38,7 +45,7 @@ export class App {
         this.action =  Action.profile;
         this.hideActions = true;
         this.hideSelect = false;
-        this.selectItems = ['Profile1','Profile2','Profile3','Profile4','Profile5'];
+        this.selectItems = this._store.profiles;
     }
 
     backToMain() {
@@ -48,23 +55,13 @@ export class App {
         this.hideCompanies = true;
     }
 
-    selectItemSelected(item: string) {
+    selectItemSelected(item: SelectItem) {
 
-        if (this.action === Action.position) {
-            this.actionsModel.position = item;
-        } else if (this.action === Action.profile) {
-            this.actionsModel.profile = item;
-        }
+        if (this.action === Action.position) this._state.setPosition(item);
+        if (this.action === Action.profile) this._state.setProfile(item);
 
-        if (this.actionsModel.isValid()) {
-
-            this.showCompanies();
-
-        } else {
-        
-            this.hideActions = false;
-            this.hideSelect = true;
-        }
+        this.hideActions = false;
+        this.hideSelect = true;
     }
 
     showCompanies() {
@@ -79,14 +76,4 @@ enum Action {
     none = 0,
     position = 1,
     profile = 2
-}
-
-class ActionsModel {
-
-    position: string;
-    profile: string;
-
-    isValid() {
-        return this.position && this.profile;
-    }
 }

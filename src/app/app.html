@@ -4,8 +4,8 @@
         <div class="cbs-main">
             <div class="cbs-flex" [ngClass]="{hide: hideActions}">
                 <cbs-actions
-                    [position]="actionsModel.position" 
-                    [profile]="actionsModel.profile"
+                    [position]="positionTitle" 
+                    [profile]="profileTitle"
                     (onSelectPosition)="selectPosition()"
                     (onSelectProfile)="selectProfile()"
                 ></cbs-actions>
@@ -19,8 +19,8 @@
             </div>
             <div class="cbs-flex" [ngClass]="{hide: hideCompanies}">
                 <cbs-companies
-                    [position]="actionsModel.position" 
-                    [profile]="actionsModel.profile"
+                    [position]="positionIndex" 
+                    [profile]="profileIndex"
                     (onBack)="backToMain()"
                 ></cbs-companies>
             </div>
