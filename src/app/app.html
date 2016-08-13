@@ -1,29 +1,26 @@
 <div class="cbs-root">
-    <div class="cbs-frame">
+    <div class="cbs-brand">
         <cbs-title></cbs-title>
-        <div class="cbs-main">
-            <div class="cbs-flex" [ngClass]="{hide: hideActions}">
-                <cbs-actions
-                    [position]="positionTitle" 
-                    [profile]="profileTitle"
-                    (onSelectPosition)="selectPosition()"
-                    (onSelectProfile)="selectProfile()"
-                ></cbs-actions>
-            </div>
-            <div class="cbs-flex" [ngClass]="{hide: hideSelect}">
-                <cbs-select 
-                    [items]="selectItems"
-                    (onBack)="backToMain()"
-                    (onItemSelected)="selectItemSelected($event)"
-                ></cbs-select>
-            </div>
-            <div class="cbs-flex" [ngClass]="{hide: hideCompanies}">
-                <cbs-companies
-                    [position]="positionIndex" 
-                    [profile]="profileIndex"
-                    (onBack)="backToMain()"
-                ></cbs-companies>
-            </div>
-        </div>
+    </div>
+    <div class="cbs-main">
+        <cbs-actions
+            [ngClass]="{hide: hideActions}"
+            [position]="_state.position | async" 
+            [profile]="_state.profile | async"
+            (onSelectPosition)="selectPosition()"
+            (onSelectProfile)="selectProfile()"
+        ></cbs-actions>
+        <cbs-select 
+            [ngClass]="{hide: hideSelect}"
+            [items]="selectItems"
+            (onBack)="backToMain()"
+            (onItemSelected)="selectItemSelected($event)"
+        ></cbs-select>
+        <cbs-companies
+            [ngClass]="{hide: hideCompanies}"
+            [position]="positionIndex" 
+            [profile]="profileIndex"
+            (onBack)="backToMain()"
+        ></cbs-companies>
     </div>
 </div>

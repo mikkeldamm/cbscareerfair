@@ -1,9 +1,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
 
+import { StoreService, StateService, Item } from '../store';
 import { Title, Actions, Select, SelectItem, Companies } from './components';
-
-import { StoreService, StateService } from '../store';
 
 @Component({
     selector: 'cbs-app',
@@ -24,10 +23,13 @@ export class App {
     constructor(private _store: StoreService, private _state: StateService) {
 
         Observable
-            .forkJoin(this._state.position, this._state.profile)
+            .combineLatest(this._state.position, this._state.profile)
+            .filter(items => {
+                return items[0] && items[1] ? true : false;
+            })
             .subscribe(items => {
 
-                this._state.setSelected(items[0], items[1]);
+                this._state.setSelected(<Item>items[0], <Item>items[1]);
                 this.showCompanies();
             });
     }
@@ -57,11 +59,10 @@ export class App {
 
     selectItemSelected(item: SelectItem) {
 
+        this.backToMain();
+
         if (this.action === Action.position) this._state.setPosition(item);
         if (this.action === Action.profile) this._state.setProfile(item);
-
-        this.hideActions = false;
-        this.hideSelect = true;
     }
 
     showCompanies() {

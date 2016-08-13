@@ -16,18 +16,60 @@
     "companies": [
         {
             "name": "Accenture",
+            "url": "https://www.accenture.com/dk-en",
             "positions": [0, 3, 4],
-            "profiles": [0, 1, 2, 3, 4]
+            "profiles": [0, 1, 2, 3, 4],
+            "background": "rgb(170, 17, 51)",
+            "color": "rgb(255, 255, 255)"
         },
         {
             "name": "Adsensus",
             "positions": [0],
-            "profiles": [0, 1, 2, 3, 4]
+            "profiles": [0, 1, 2, 3, 4],
+            "background": "rgb(2, 47, 82)",
+            "color": "rgb(255, 255, 255)"
         },
         {
             "name": "AplhaSights",
             "positions": [2, 3, 4],
-            "profiles": [0, 1, 2, 3]
+            "profiles": [0, 1, 2, 3],
+            "background": "#adc200",
+            "color": ""
+        },
+        {
+            "name": "ATP",
+            "positions": [0, 1, 2, 3, 4],
+            "profiles": [0, 1, 2, 3, 4],
+            "background": "#adc200",
+            "color": ""
+        },
+        {
+            "name": "Bayer",
+            "positions": [0, 1, 2, 3, 4],
+            "profiles": [0, 1, 2, 3, 4],
+            "background": "#0090c5",
+            "color": "#fff"
+        },
+        {
+            "name": "British American Tobacco",
+            "positions": [0, 1, 2, 3, 4],
+            "profiles": [0, 1, 2],
+            "background": "#fb0",
+            "color": "#027"
+        },
+        {
+            "name": "Cobham SATCOM",
+            "positions": [0, 1, 2, 3, 4],
+            "profiles": [0, 1, 2, 3, 4],
+            "background": "#00a4f2",
+            "color": "#fff"
+        },
+        {
+            "name": "Codan Forsikring",
+            "positions": [0, 4],
+            "profiles": [0, 1, 2, 3, 4],
+            "background": "#000043",
+            "color": "#ffdb78"
         }
     ]
 }

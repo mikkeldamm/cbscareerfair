@@ -16,82 +16,61 @@
 
 html, body{
     height: 100%;
-    font-family: 'cbs-sans-regular', Arial, Helvetica, sans-serif
 }
 
 body {
     margin: 0;
-    padding: 0;
+    line-height: 1.5;
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'cbs-sans-regular', Arial, Helvetica, sans-serif;
+    min-width: 320px;
+
+    @include breakpoint(large) {
+        overflow: hidden;
+    }
 }
 
 .cbs-root {
-    @extend %flexbox;
+    width: 100%;
     height: 100%;
-    min-height: 900px;
+    @extend %flexbox;
+    @include flex-direction(column);
 }
 
-.cbs-frame {
-    @extend %flexbox;
-    @include flex(1);
-    @include flex-direction(column);
-    border: 10px solid #d87a2a;
+.cbs-brand {
+    background: linear-gradient(rgba(73,103,170, 0.3), rgba(73,103,170, 0.6)), 
+                url('http://cbsobserver.dk/sites/default/files/styles/colorbox_fullscreen/public/nyhedsbilleder/Matchmaking_0.jpg?itok=YWqSmoHG');
+    background-size: cover;
+    min-height: 200px;
+    position: relative;
 
     @include breakpoint(large) {
-        margin: 2em;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 40%;
+        height: 100%;
     }
+
+    @media print { 
+        display: none;
+    }   
 }
 
 .cbs-main {
-    @extend %flexbox;
-    @include flex(1);
-    @include align-items(center);
-    @include justify-content(center);
-
     position: relative;
-    padding: 2em;
-
-    @include breakpoint(medium) {
-        padding: 0;
-    }
-}
-
-.cbs-flex {
-    position: absolute;
-    left: 2em;
-    right: 2em;
-    bottom: 0;
-    top: 0;
-
-    @include breakpoint(medium) {
-        left: 0;
-        right: 0;
-    }
-
     @include flex(1);
 
-    @extend %flexbox;
-    @include align-items(center);
-    @include justify-content(center);
-
-    transition: opacity 0.2s ease-in-out;
-
-    &.hide {
-        opacity: 0;
-        z-index: -1;
-
-        @media screen and (max-height: 39.9375em) {
-            display: none;
-        }
-    }
+    @include breakpoint(large) {
+        position: absolute;
+        top: 0;
+        left: auto;
+        right: 0;
+        width: 60%;
+        height: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }  
 }
-
-/*
-transform: translateX(15em);
-    transition: opacity 0.2s ease-in-out,
-                transform 0.2s ease-in-out;
-
-    &.hide {
-        opacity: 0;
-        transform: translateX(0em);
-    }
-    */

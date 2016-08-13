@@ -3,4 +3,97 @@
 
 :host {
     
+    &.hide {
+        display: none;
+    }
+}
+
+span {
+    position: relative;
+    margin: 2rem 3rem 1rem;
+    display: block;
+    font-size: 1.8em;
+    cursor: pointer;
+
+    i {
+        line-height: 1em;
+        width: 1em;
+        display: inline-block;
+        left: 0;
+        top: 0;
+        transition: transform 0.2s ease-in-out;
+
+        svg polygon {
+            transition: fill 0.2s ease-in-out;
+        }
+    }
+
+    &:hover {
+
+        i {
+            transform: translateX(-6px);
+        
+            svg polygon {
+                fill: #d87a2a;
+            }
+        }
+    }
+
+    @media print { 
+        display: none;   
+    }
+}
+
+.cbs-companies-row {
+    @extend %flexbox;
+    @include flex-direction(row);
+    @include flex-flow(row wrap);
+
+    @include breakpoint(medium) {
+        padding: 0 1.5rem;
+    }
+
+    @media print { 
+        padding: 0 1.5rem;
+    }
+}
+
+.cbs-company-column {
+    @extend %flexbox;
+    @include flex(0 0 50%);
+    box-sizing: border-box;
+    min-height: 12em;
+    
+    @include breakpoint(medium) {
+        padding: 1.5rem;
+    }
+
+    @include breakpoint(xlarge) { 
+        @include flex(0 0 33.33333%);
+    }
+
+    @media print { 
+        padding: 1.5rem;
+    }
+}
+.cbs-company {
+    @extend %flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+    @include flex(1);
+    padding: 1em 1.5em;
+    font-size: 1.8em;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    transition: transform 0.1s ease-out;
+    -webkit-print-color-adjust: exact;
+
+    &:hover {
+        transform: scale(1.05, 1.05);
+    }
+
+    @media print { 
+        transform: scale(1, 1);
+    }
 }

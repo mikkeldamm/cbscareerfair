@@ -2,13 +2,30 @@
 @import "../../../mixins/breakpoint";
 
 :host {
-    @include flex(0);
+    position: absolute;
+    bottom: 0;
 }
 
 h4 {
-    color: #292929;
-    margin: 2rem;
+    color: rgb(255, 255, 255);
     font-family: 'cbs-sans-bold', Arial, Helvetica, sans-serif;
-    font-size: 2.5em;
+    font-size: 3.5em;
     text-transform: uppercase;
+    margin: 0 0 2rem 2rem;
+    line-height: 1em;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+
+    span {
+        margin-right: 0.25em;
+    }
+
+    @include breakpoint(large) {
+
+        font-size: 5em;
+
+        span {
+            margin: 0;
+            display: block;
+        }
+    }
 }

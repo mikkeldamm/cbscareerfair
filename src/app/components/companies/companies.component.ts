@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { DomSanitizationService } from '@angular/platform-browser';
 
-import { StoreService, StateService } from '../../../store';
+import { StoreService, StateService, Company } from '../../../store';
 
 @Component({
     selector: 'cbs-companies',
@@ -11,9 +12,9 @@ export class Companies {
 
     @Output() onBack = new EventEmitter();
 
-    companies: string[] = [];
+    companies: Company[] = [];
 
-    constructor(private _store: StoreService, private _state: StateService) {
+    constructor(private _store: StoreService, private _state: StateService, private _sanitizer: DomSanitizationService) {
 
         this._state.selected.subscribe((selected) => {
 
@@ -21,14 +22,27 @@ export class Companies {
         });
     }
 
+    goBack() {
+
+        this._state.clear();
+        this.onBack.emit({});
+    }
+
+    getCompanyStyle(company: Company) {
+
+        let styles = [];
+
+        if (company.background) styles.push(`background-color: ${company.background};`);
+        if (company.color) styles.push(`color: ${company.color};`);
+
+        return this._sanitizer.bypassSecurityTrustStyle(styles.join(" "));
+    }
+
     private filterCompanies(positionIndex: number, profileIndex: number) {
 
         this.companies = this._store.companies
             .filter((company) => {
                 return company.positions.indexOf(positionIndex) > -1 && company.profiles.indexOf(profileIndex) > -1;
-            })
-            .map(company => { 
-                return company.name; 
             });
     }
 }

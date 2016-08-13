@@ -3,20 +3,30 @@
 
 :host {
     @extend %flexbox;
-    @include flex(1);
     @include flex-direction(column);
+    height: 100%;
 
-    max-width: 30em;
+    &.hide {
+        display: none;
+    }
 }
 
 .cbs-action {
-
+    @extend %flexbox;
+    @include flex(0 0 50%);
+    @include align-items(center);
+    @include justify-content(center);
     font-size: 1.8em;
-    padding: 1em 0em;
-    margin-bottom: 2em;
-    border-bottom: 1px solid #efefef;
-    box-shadow: 0px 3px 4px -3px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    border-bottom: 1px solid rgb(220, 220, 220);
+
+    @include breakpoint(large) {
+        font-size: 2.1em;
+    }
+
+    &:last-child {
+        border-bottom: none;
+    }
 
     span {
         display: block;
@@ -25,15 +35,13 @@
 
     i {
         line-height: 1em;
-        position: absolute;
-        width: 1em;
         display: inline-block;
         vertical-align: middle;
-        right: 0;
         transition: transform 0.2s ease-in-out;
+        margin-left: 1em;
 
         svg {
-            width: 1em;
+            width: 0.8em;
             
             polygon {
                 transition: fill 0.2s ease-in-out;
@@ -54,7 +62,6 @@
 
     .cb-action__text {
         display: none;
-        padding-right: 1em;
 
         svg path {
             fill: #789e3e;

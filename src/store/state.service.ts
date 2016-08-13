@@ -12,14 +12,15 @@ export class StateService {
 
     constructor(store: StoreService) {
 
-        this.clear();
+        this.position = new Subject<Item>();
+        this.profile = new Subject<Item>();
+        this.selected = new Subject<Selected>();
     }
 
     clear() {
 
-        this.position = new Subject<Item>();
-        this.profile = new Subject<Item>();
-        this.selected = new Subject<Selected>();
+        this.position.next(null);
+        this.profile.next(null);
     }
 
     setSelected(position: Item, profile: Item) {
@@ -28,21 +29,19 @@ export class StateService {
 
     setPosition(item: Item) {
         this.position.next(item);
-        this.position.complete();
     }
 
     setProfile(item: Item) {
         this.profile.next(item);
-        this.profile.complete();
     }
 }
 
-interface Item {
+export interface Item {
     title: string;
     index: number;
 }
 
-interface Selected {
+export interface Selected {
     position: Item;
     profile: Item;
 }

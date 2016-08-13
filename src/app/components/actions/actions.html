@@ -1,6 +1,6 @@
 <div class="cbs-action" (click)="positionClicked($event)" [ngClass]="{active: position}">
     <span class="cb-action__choice">
-        Choose your position
+        Choose your position {{time | async}}
         <i>
             <svg viewBox="0 0 199.405 199.405">
                 <g><polygon points="99.703,199.405 199.405,99.702 99.703,0 71.418,28.285 124.662,81.529 0,81.529 0,117.876 124.662,117.876 71.418,171.12"/></g>
@@ -8,7 +8,7 @@
         </i>
     </span>
     <span class="cb-action__text">
-        {{position}}
+        {{ position ? position.title : '' }}
         <i>
             <svg viewBox="0 0 533.333 533.334">
                 <g><path d="M450,58.333l-250,250L83.333,191.667L0,275l200,200l333.333-333.333L450,58.333z"/></g>
@@ -26,7 +26,7 @@
         </i>
     </span>
     <span class="cb-action__text">
-        {{profile}}
+        {{ profile ? profile.title : '' }}
         <i>
             <svg viewBox="0 0 533.333 533.334">
                 <g><path d="M450,58.333l-250,250L83.333,191.667L0,275l200,200l333.333-333.333L450,58.333z"/></g>

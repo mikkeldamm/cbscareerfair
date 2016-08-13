@@ -2,7 +2,7 @@ export class StoreService {
     
     positions: string[];
     profiles: string[];
-    companies: Companies[];
+    companies: Company[];
 
     constructor() {
 
@@ -14,8 +14,11 @@ export class StoreService {
     }
 }
 
-interface Companies {
+export interface Company {
     name: string;
+    url: string;
     positions: number[];
     profiles: number[];
+    background: string;
+    color: string;
 }

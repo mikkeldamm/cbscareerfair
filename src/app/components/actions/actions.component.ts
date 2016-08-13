@@ -1,4 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { Item } from '../../../store';
 
 @Component({
     selector: 'cbs-actions',
@@ -7,8 +10,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class Actions {
 
-    @Input() position: string;
-    @Input() profile: string;
+    @Input() position: Observable<Item>;
+    @Input() profile: Observable<Item>;
 
     @Output() onSelectPosition = new EventEmitter();
     @Output() onSelectProfile = new EventEmitter();
