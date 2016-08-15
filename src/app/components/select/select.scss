@@ -3,6 +3,7 @@
 
 :host {
     @extend %flexbox;
+    @include flex(1);
     @include flex-direction(column);
 
     &.hide {
