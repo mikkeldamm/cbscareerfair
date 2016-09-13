@@ -1,26 +1,29 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { StoreService, StateService, Item } from '../store';
-import { Title, Actions, Select, SelectItem, Companies } from './components';
+import { StoreService, StateService, Item } from './store';
 
 @Component({
     selector: 'cbs-app',
     encapsulation: ViewEncapsulation.None,
-    styles: [ require('./app.scss') ],
-    template: require('./app.html'),
-    directives: [ Title, Actions, Select, Companies ]
+    styleUrls: [ './app.style.scss' ],
+    templateUrl: './app.template.html'
 })
-export class App {
+export class App implements OnInit {
 
     selectItems: string[] = [];
     action: Action;
 
+    componentLoaded: boolean = false;
     hideActions: boolean = false;
     hideSelect: boolean = true;
     hideCompanies: boolean = true;
 
     constructor(private _store: StoreService, private _state: StateService) {
+
+    }
+
+    ngOnInit() {
 
         Observable
             .combineLatest(this._state.position, this._state.profile)
@@ -30,8 +33,9 @@ export class App {
             .subscribe(items => {
 
                 this._state.setSelected(<Item>items[0], <Item>items[1]);
-                this.showCompanies();
             });
+
+        this.componentLoaded = true;
     }
 
     selectPosition() {
@@ -48,28 +52,6 @@ export class App {
         this.hideActions = true;
         this.hideSelect = false;
         this.selectItems = this._store.profiles;
-    }
-
-    backToMain() {
-
-        this.hideActions = false;
-        this.hideSelect = true;
-        this.hideCompanies = true;
-    }
-
-    selectItemSelected(item: SelectItem) {
-
-        this.backToMain();
-
-        if (this.action === Action.position) this._state.setPosition(item);
-        if (this.action === Action.profile) this._state.setProfile(item);
-    }
-
-    showCompanies() {
-
-        this.hideCompanies = false;
-        this.hideActions = true;
-        this.hideSelect = true;
     }
 }
 

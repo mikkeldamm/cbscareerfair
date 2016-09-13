@@ -1,23 +1,13 @@
-import { bootstrap } from '@angular/platform-browser-dynamic';
 
-import { PLATFORM_PROVIDERS } from './platform/browser';
-import { ENV_PROVIDERS, decorateComponentRef } from './platform/environment';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { decorateModuleRef } from './app/environment';
 
-import { App } from './app';
+import { AppModule } from './app';
 
-export function main(initialHmrState?: any): Promise<any> {
+document.addEventListener('DOMContentLoaded', () => {
 
-	return bootstrap(App, [
-		...PLATFORM_PROVIDERS,
-		...ENV_PROVIDERS
-	])
-	.then(decorateComponentRef)
-	.catch(err => console.error(err));
-}
-
-if ('development' === ENV && HMR === true) {
-	let ngHmr = require('angular2-hmr');
-	ngHmr.hotModuleReplacement(main, module);
-} else {
-	document.addEventListener('DOMContentLoaded', () => main());
-}
+    return platformBrowserDynamic()
+        .bootstrapModule(AppModule)
+        .then(decorateModuleRef)
+        .catch(err => console.error(err));
+});

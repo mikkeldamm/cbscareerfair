@@ -21,10 +21,9 @@ import 'zone.js/dist/zone';
 
 import 'ts-helpers';
 
-if ('production' === ENV) {
-
-} else {
-  
+if (ENV !== 'production') {
+    
     Error.stackTraceLimit = Infinity;
+
     require('zone.js/dist/long-stack-trace-zone');
 }

@@ -8,77 +8,66 @@ const NormalModuleReplacementPlugin = require('webpack/lib/NormalModuleReplaceme
 const IgnorePlugin = require('webpack/lib/IgnorePlugin');
 const DedupePlugin = require('webpack/lib/optimize/DedupePlugin');
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
-const CompressionPlugin = require("compression-webpack-plugin")
 const WebpackMd5Hash = require('webpack-md5-hash');
 
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || 8080;
-const METADATA = webpackMerge(commonConfig.metadata, {
+const METADATA = webpackMerge(commonConfig({ env: ENV }).metadata, {
     host: HOST,
     port: PORT,
-    ENV: ENV,
-    HMR: false
+    ENV: ENV
 });
 
-module.exports = webpackMerge(commonConfig, {
-    debug: false,
-    devtool: 'source-map',
-    output: {
-        path: helpers.root('dist'),
-        filename: '[name].[chunkhash].bundle.js',
-        sourceMapFilename: '[name].[chunkhash].bundle.map',
-        chunkFilename: '[id].[chunkhash].chunk.js'
-    },
-    plugins: [
-        new WebpackMd5Hash(),
-        new DedupePlugin(),
-        new DefinePlugin({
-            'ENV': JSON.stringify(METADATA.ENV),
-            'HMR': METADATA.HMR,
-            'process.env': {
+module.exports = function (env) {
+    return webpackMerge(commonConfig({ env: ENV }), {
+        debug: false,
+        devtool: 'source-map',
+        output: {
+            path: helpers.root('dist'),
+            filename: '[name].[chunkhash].bundle.js',
+            sourceMapFilename: '[name].[chunkhash].bundle.map',
+            chunkFilename: '[id].[chunkhash].chunk.js'
+        },
+        plugins: [
+            new WebpackMd5Hash(),
+            new DefinePlugin({
                 'ENV': JSON.stringify(METADATA.ENV),
-                'NODE_ENV': JSON.stringify(METADATA.ENV),
-                'HMR': METADATA.HMR,
-            }
-        }),
-        new UglifyJsPlugin({
-            beautify: false, //prod
-            mangle: { screw_ie8: true }, //prod
-            compress: { screw_ie8: true }, //prod
-            comments: false //prod
-        }),
-        new NormalModuleReplacementPlugin(
-            /angular2-hmr/,
-            function() {}
-        ),
-        new CompressionPlugin({
-            regExp: /\.css$|\.html$|\.js$|\.map$/,
-            threshold: 2 * 1024
-        })
-    ],
-    tslint: {
-        emitErrors: true,
-        failOnHint: true,
-        resourcePath: 'src'
-    },
-    htmlLoader: {
-        minimize: true,
-        removeAttributeQuotes: false,
-        caseSensitive: true,
-        customAttrSurround: [
-            [/#/, /(?:)/],
-            [/\*/, /(?:)/],
-            [/\[?\(?/, /(?:)/]
+                'process.env': {
+                    'ENV': JSON.stringify(METADATA.ENV),
+                    'NODE_ENV': JSON.stringify(METADATA.ENV)
+                }
+            }),
+            new UglifyJsPlugin({
+                beautify: false,
+                mangle: { screw_ie8: true, keep_fnames: true },
+                compress: { screw_ie8: true },
+                comments: false
+            })
         ],
-        customAttrAssign: [/\)?\]?=/]
-    },
-    node: {
-        global: 'window',
-        crypto: 'empty',
-        process: false,
-        module: false,
-        clearImmediate: false,
-        setImmediate: false
-    }
-});
+        tslint: {
+            emitErrors: true,
+            failOnHint: true,
+            resourcePath: 'src'
+        },
+        htmlLoader: {
+            minimize: true,
+            removeAttributeQuotes: false,
+            caseSensitive: true,
+            customAttrSurround: [
+                [/#/, /(?:)/],
+                [/\*/, /(?:)/],
+                [/\[?\(?/, /(?:)/]
+            ],
+            customAttrAssign: [/\)?\]?=/]
+        },
+        node: {
+            global: 'window',
+            crypto: 'empty',
+            process: false,
+            module: false,
+            clearImmediate: false,
+            setImmediate: false
+        }
+    });
+}
