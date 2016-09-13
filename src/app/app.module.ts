@@ -16,6 +16,8 @@ import { Positions } from './positions';
 import { Profiles } from './profiles';
 import { Companies } from './companies';
 import { Company } from './company';
+import { Register } from './register';
+import { ThankYou  } from './thankyou';
 
 @NgModule({
     bootstrap: [
@@ -27,7 +29,9 @@ import { Company } from './company';
         Positions,
         Profiles,
         Companies,
-        Company
+        Company,
+        Register,
+        ThankYou
     ],
     imports: [
         BrowserModule,
