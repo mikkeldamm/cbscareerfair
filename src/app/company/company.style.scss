@@ -1,0 +1,68 @@
+:host {
+    display: block;
+    padding-top: 1.5rem;
+    min-height: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+    position: relative;
+}
+
+.header {
+    margin: 0 1.5rem 0 1.5rem;
+    padding: 1em;
+    border: 4px solid #f37160;
+    color: #f37160;
+
+    &--headline {
+        margin: 0;
+        padding: 0;
+        font-size: 2.5em;
+        text-transform: uppercase;
+        color: #f37160;
+
+        &__year {
+            font-size: 0.6em;
+            color: #414042;
+        }
+    }
+}
+
+.back {
+    margin: 1.5rem;
+
+    &--button {
+        position: relative;
+        padding-left: 1.4em;
+        font-size: 1.3em;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        &:before {
+            content: "";
+            position: absolute;
+            left: -0.5em;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 1.8em;
+            height: 1.8em;
+            display: block;
+            background-image: url("/assets/images/arrow_left.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+}
+
+.headline {
+    margin: 2rem 1.5rem 0;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: rgb(146, 146, 146);
+}
+
+.description {
+    margin: 1rem 1.5rem 0;
+    font-size: 1.1em;
+}
