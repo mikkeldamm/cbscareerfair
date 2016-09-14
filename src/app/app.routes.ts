@@ -13,7 +13,7 @@ export const ROUTES: Routes = [
     { path: 'positions', component: Positions },
     { path: 'profiles', component: Profiles },
     { path: 'companies', component: Companies },
-    { path: 'company', component: Company },
+    { path: 'company/:name', component: Company },
     { path: 'register', component: Register },
     { path: 'thankyou', component: ThankYou },
     { path: '**', component: Home },
