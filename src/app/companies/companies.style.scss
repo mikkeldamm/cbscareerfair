@@ -19,10 +19,14 @@
         font-size: 2.5em;
         text-transform: uppercase;
         color: #f37160;
+        position: relative;
 
         &__year {
             font-size: 0.6em;
             color: #414042;
+            position: absolute;
+            right: 0;
+            bottom: 0;
         }
     }
 }
@@ -79,6 +83,7 @@
         float: left;
         font-size: 1.1em;
         font-weight: bold;
+        cursor: pointer;
 
         &.choosed {
             background-color: rgb(168, 168, 169);
