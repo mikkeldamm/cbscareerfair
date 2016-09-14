@@ -1,4 +1,4 @@
-<div class="header">
+<div class="header" [routerLink]="['/']">
     <h1 class="header--headline">
         CBS<br>
         CAREER<br>
@@ -13,9 +13,144 @@
     Sign up and get access to company presentations, career seminars and the chance to network with 
     various companies.
 </div>
-<div class="form">
+<form class="form" action="http://career.cbs.dk/formhandling/process.php">
+    <input type="hidden" name="form_tools_form_id" value="18">
     <div class="form--field">
-        <label>Name</label>
-        <input type="text" />
+        <label>First name</label>
+        <input type="text" maxlength="100" name="firstname" />
     </div>
-</div>
+    <div class="form--field">
+        <label>Last name</label>
+        <input type="text" maxlength="100" name="lastname" />
+    </div>
+    <div class="form--field">
+        <label>Email</label>
+        <input type="text" maxlength="100" name="email" />
+    </div>
+    <div class="form--field">
+        <label>Status</label>
+        <select name="status[]" id="form_status">
+            <option>CBS student</option>
+            <option>CBS alumni</option>
+            <option>From another university</option>
+            <option>Other</option>
+        </select>
+    </div>
+    <div class="form--field">
+        <label>Enrolment</label>
+        <select name="enrolment[]" id="form_enrolment">
+            <option value="" selected="">Please select…</option>
+            <optgroup label="Bachelor">
+                <option value="Bachelor, 1st year">1st year Bachelor</option>
+                <option value="Bachelor, 2nd year">2nd year Bachelor</option>
+                <option value="Bachelor, 3rd year">3rd year Bachelor</option>
+            </optgroup>
+            <optgroup label="Master">
+                <option value="Master, 1st year">1st year Master</option>
+                <option value="Master, 2nd year">2nd year Master</option>
+            </optgroup>
+            <optgroup label="Other">
+                <option value="MBA or HD">MBA or HD</option>
+                <option value="Graduated">Graduated</option>
+                <option value="Doesnotapply">Does not apply</option>
+            </optgroup>
+        </select>
+    </div>
+    <div class="form--field">
+        <label>Programme</label>
+        <select name="programme[]" id="form_programme">
+            <option value="" selected="">Please select…</option>
+            <optgroup label="Bachelor">
+                <option value="HA - Almen Erhvervsøkonomi">HA - Almen Erhvervsøkonomi</option>
+                <option value="HA pro.">HA pro. – Erhvervsøkonomi og projektledelse</option>
+                <option value="HA(fil.) - Erhvervsøkonomi og filosofi ">HA(fil.) - Erhvervsøkonomi og filosofi</option>
+                <option value="HA(it.) - Erhvervsøkonomi og informationsteknologi">HA(it.) - Erhvervsøkonomi og informationsteknologi</option>
+                <option value="HA(jur.) - Erhvervsøkonomi og jura">HA(jur.) - Erhvervsøkonomi og jura</option>
+                <option value="HA(kom.) - Erhvervsøkonomi og virksomhedskommunikation ">HA(kom.) - Erhvervsøkonomi og virksomhedskom.</option>
+                <option value="HA(mat.) - Erhvervsøkonomi og matematik">HA(mat.) - Erhvervsøkonomi og matematik</option>
+                <option value="HA(psyk.) - Erhvervsøkonomi og psykologi">HA(psyk.) - Erhvervsøkonomi og psykologi</option>
+                <option value="BA i Engelsk og Organisationskommunikation">BA i Engelsk og Organisationskommunikation</option>
+                <option value="BA i Europæisk Business (EB)">BA i Europæisk Business (EB)</option>
+                <option value="BA i Interkulturel Markedskommunikation - med engelsk, fransk, spansk eller tysk">BA i Interkulturel Markedskommunikation</option>
+                <option value="BA i International Virksomhedskommunikation">BA i International Virksomhedskommunikation</option>
+                <option value="BA in Information Management">BA in Information Management</option>
+                <option value="BSc in International Business">BSc in International Business</option>
+                <option value="BSc in International Business and Politics">BSc in International Business and Politics</option>
+                <option value="BSc in International Shipping and Trade">BSc in International Shipping and Trade</option>
+                <option value="BSc in Business Administration and Service Management">BSc in Business Administration and Service Management</option>
+                <option value="BSc in Business Administration and Sociology">BSc in Business Administration and Sociology</option>
+                <option value="BSc in Business, Language and Culture (BLC) (SPRØK) - med fransk, tysk eller spansk">BSc in Business, Language and Culture (BLC) (SPRØK)</option>
+                <option value="BSc in Business, Asian Language and Culture - med japansk eller kinesisk">BSc in Business, Asian Language and Culture</option>
+                <option value="Otherbachelor">Other Bachelor not listed</option>
+            </optgroup>
+            <optgroup label="Master (Cand.merc.)">
+                <option value="Cand.merc. Accounting, Strategy and Control">Accounting, Strategy and Control</option>
+                <option value="Cand.merc. Applied Economics and Finance">Applied Economics and Finance</option>
+                <option value="Cand.merc. Branding and Communications Management">Branding and Communications Management (BCM/MCM)</option>
+                <option value="Cand.merc. Finance and Investments">Finance and Investments</option>
+                <option value="Cand.merc. Finance and Strategic Management">Finance and Strategic Management</option>
+                <option value="Cand.merc. Finansiering og Regnskab">Finansiering og Regnskab</option>
+                <option value="Cand.merc. Human Resource Management">Human Resource Management</option>
+                <option value="Cand.merc. International Business">International Business</option>
+                <option value="Cand.merc. International Marketing and Management">International Marketing and Management</option>
+                <option value="Cand.merc. Management of Innovation and Business Development">Management of Innovation and Business Development</option>
+                <option value="Cand.merc. Strategic Market Creation">Strategic Market Creation</option>
+                <option value="Cand.merc. Strategy, Organisation and Leadership">Strategy, Organisation and Leadership</option>
+                <option value="Cand.merc. Supply Chain Management">Supply Chain Management</option>
+                <option value="Cand.merc. Økonomisk Markedsføring">Økonomisk Markedsføring</option>
+            </optgroup>
+            <optgroup label="Master">
+                <option value="Cand.merc.(it.) Information Management">Cand.merc.(it.) Information Management</option>
+                <option value="Cand.merc.int. Business and Development Studies">Cand.merc.int. Business and Development Studies</option>
+                <option value="Cand.merc.int. Leadership and Management Studies">Cand.merc.int. Leadership and Management Studies</option>
+                <option value="MA in International Business Communications - Multicultural Communication in Organizations">MA in International Business Communications - Multicultural Communication in Organizations</option>
+                <option value="MA in International Business Communications - Intercultural Marketing">MA in International Business Communications - Intercultural Marketing</option>
+                <option value="MSc in Business Administration and Information Systems">MSc in Business Administration and Information Systems</option>
+                <option value="MSc in Business Administration and Innovation in Health Care">MSc in Business Administration and Innovation in Health Care</option>
+                <option value="MSc in Business Administration and Information Systems - E-business">MSc in Business Administration and Information Systems - E-business</option>
+                <option value="MSc in Business Administration and Information Systems">MSc in Business Administration and Information Systems</option>
+                <option value="MSc in Business, Language and Culture - Business and Development Studies">MSc in Business, Language and Culture - Business and Development Studies</option>
+                <option value="MSc in Business, Language and Culture - Diversity and Change Management ">MSc in Business, Language and Culture - Diversity and Change Management </option>
+                <option value="MSc in International Business and Politics (cand.merc.(pol.))">MSc in International Business and Politics (cand.merc.(pol.))</option>
+                <option value="MSc in Advanced Economics and Finance (cand.oecon.)">MSc in Advanced Economics and Finance (cand.oecon.)</option>
+                <option value="MSc in Business Administration and Bioentrepreneurship">MSc in Business Administration and Bioentrepreneurship</option>
+                <option value="MSc in International Law, Economics and Management">MSc in International Law, Economics and Management</option>
+                <option value="MSocSc in Management of Creative Business Processes">MSocSc in Management of Creative Business Processes</option>
+                <option value="MSocSc in Organisational Innovation and Entrepreneurship">MSocSc in Organisational Innovation and Entrepreneurship</option>
+                <option value="MSocSc in Public Management and Social Development">MSocSc in Public Management and Social Development</option>
+                <option value="MSocSc in Service Management">MSocSc in Service Management</option>
+                <option value="Cand.soc. i Human Resource Management">Cand.soc. i Human Resource Management</option>
+                <option value="Cand.soc. i Politisk Kommunikation og Ledelse">Cand.soc. i Politisk Kommunikation og Ledelse</option>
+                <option value="Cand.merc.aud.">Cand.merc.aud.</option>
+                <option value="Cand.merc.(fil.)">Cand.merc.(fil.)</option>
+                <option value="Cand.merc.(it.) IT Management and Business Economics">Cand.merc.(it.) IT Management and Business Economics</option>
+                <option value="Cand.merc.(jur.)">Cand.merc.(jur.)</option>
+                <option value="Cand.merc.(kom.)">Cand.merc.(kom.)</option>
+                <option value="Cand.merc.(mat.)">Cand.merc.(mat.)</option>
+                <option value="Cand.merc.(psyk.)">Cand.merc.(psyk.)</option>
+                <option value="Cand.ling.merc. i Erhvervssprog og International Erhvervskommunikation">Cand.ling.merc. i Erhvervssprog og Int. Erhvervskom.</option>
+                <option value="Cand.it., E-business">Cand.it., E-business</option>
+                <option value="Othermaster">Other Master not listed</option>
+            </optgroup>
+            <optgroup label="Exchange">
+                <option value="Exchange (bachelor)">Exchange (bachelor)</option>
+                <option value="Exchange (master)">Exchange (master)</option>
+            </optgroup>
+            <optgroup label="HD">
+                <option value="HD 1. del">HD 1. del</option>
+                <option value="HD 2. del">HD 2. del</option>
+            </optgroup>
+            <optgroup label="MBA">
+                <option value="MBA">MBA</option>
+            </optgroup>
+            <optgroup label="CEMS">
+                <option value="CEMS">CEMS</option>
+            </optgroup>
+            <optgroup label="Other">
+                <option value="Other">Other programme / not listed</option>
+                <option value="Doesnotapply">Does not apply</option>
+            </optgroup>
+        </select>
+    </div>
+    <button type="submit">Register</button>
+</form>

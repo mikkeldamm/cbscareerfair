@@ -33,6 +33,12 @@ body {
     }
 }
 
+p, input, select, button {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'cbs-sans-regular', Arial, Helvetica, sans-serif;
+}
+
 .cbs-root {
     min-height: 100%;
     height: 100%;

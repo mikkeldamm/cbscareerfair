@@ -1,0 +1,44 @@
+{
+    "positions": {
+        "0": "Student jobs", 
+        "1": "Project and thesis collaboration", 
+        "2": "Internships",
+        "3": "Graduate/Trainee positions",
+        "4": "Full time positions"
+    },
+    "profiles": {
+        "0": "Economics, Finance and Accounting",
+        "1": "Business Management and Law",
+        "2": "Marketing, Communication and Language",
+        "3": "IT, Innovation and Entrepreneurship",
+        "4": "HR and Organisational Development"
+    },
+    "companies": {
+        "day1": [
+            {
+                "name": "Accenture",
+                "hall": "A",
+                "stall": 1,
+                "positions": [1, 2],
+                "profiles": [0, 1, 2, 3, 4]
+            },
+            {
+                "name": "Dansk Bank",
+                "hall": "B",
+                "stall": 2,
+                "positions": [0, 3, 4],
+                "profiles": [4, 3],
+                "presentation": "10:30-10:45 at SPs16"
+            }
+        ],
+        "day2": [
+            {
+                "name": "Accenture",
+                "hall": "A",
+                "stall": 1,
+                "positions": [1, 2],
+                "profiles": [0, 1, 2, 3, 4]
+            }
+        ]
+    }
+}
