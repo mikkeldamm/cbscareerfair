@@ -16,9 +16,9 @@
     You chose: Student jobs, Internships, Business Management & Law, Marketing Communication & Language
 </div>
 <div class="filter">
-    <div class="filter--button">All companies</div>
-    <div class="filter--button choosed">Oct. 5</div>
-    <div class="filter--button">Oct. 6</div>
+    <div class="filter--button" [class.choosed]="(filter$ | async) == 0" (click)="filter$.next(0)">All companies</div>
+    <div class="filter--button" [class.choosed]="(filter$ | async) == 1" (click)="filter$.next(1)">Oct. 5</div>
+    <div class="filter--button" [class.choosed]="(filter$ | async) == 2" (click)="filter$.next(2)">Oct. 6</div>
 </div>
 <ul class="list">
     <li class="list--item">
@@ -37,7 +37,10 @@
         <div class="list--item__stall">35</div>
     </li>
     <li class="list--item">
-        <div class="list--item__name">Novo Nordisk</div>
+        <div class="list--item__name">
+            Novo Nordisk
+            <span class="list--item__name__presentation">Presentation: 10:30-10:45 at SPs16</span>
+        </div>
         <div class="list--item__hall">B</div>
         <div class="list--item__stall">28</div>
     </li>
