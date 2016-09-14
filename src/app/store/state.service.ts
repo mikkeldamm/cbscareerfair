@@ -1,47 +1,66 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
-import { StoreService } from './store.service';
+import { StoreService, Item } from './store.service';
 
 @Injectable()
 export class StateService {
     
-    position: Subject<Item>;
-    profile: Subject<Item>;
-    selected: Subject<Selected>;
+    positionsList: Item[] = [];
+    profilesList: Item[] = [];
+
+    // TODO: set this as the current day (oct 5 or 6)
+    // TODO: change this var when other date is selected
+    currentDay: number = 1;
+
+    positions: BehaviorSubject<Item[]>;
+    profiles: BehaviorSubject<Item[]>;
 
     constructor(store: StoreService) {
 
-        this.position = new Subject<Item>();
-        this.profile = new Subject<Item>();
-        this.selected = new Subject<Selected>();
+        this.positions = new BehaviorSubject<Item[]>([]);
+        this.profiles = new BehaviorSubject<Item[]>([]);
+
+        this.positions.subscribe(positions => {
+            this.positionsList = positions;
+        });
+
+        this.profiles.subscribe(profiles => {
+            this.profilesList = profiles;
+        });
     }
 
     clear() {
 
-        this.position.next(null);
-        this.profile.next(null);
+        this.positions.next([]);
+        this.profiles.next([]);
     }
 
-    setSelected(position: Item, profile: Item) {
-        this.selected.next({ position: position, profile: profile });
+    anySelected() {
+        return this.anyPositionsSelected() && this.anyProfilesSelected();
     }
 
-    setPosition(item: Item) {
-        this.position.next(item);
+    anyPositionsSelected() {
+        return this.positionsList.length > -1;
     }
 
-    setProfile(item: Item) {
-        this.profile.next(item);
+    anyProfilesSelected() {
+        return this.profilesList.length > -1;
     }
-}
 
-export interface Item {
-    title: string;
-    index: number;
-}
+    addPosition(item: Item) {
+        this.positions.next(this.positionsList.concat([item]));
+    }
 
-export interface Selected {
-    position: Item;
-    profile: Item;
+    removePosition(item: Item) {
+        this.positions.next(this.positionsList.filter(i => i.index !== item.index));
+    }
+
+    addProfile(item: Item) {
+        this.profiles.next(this.profilesList.concat([item]));
+    }
+
+    removeProfile(item: Item) {
+        this.profiles.next(this.profilesList.filter(i => i.index !== item.index));
+    }
 }

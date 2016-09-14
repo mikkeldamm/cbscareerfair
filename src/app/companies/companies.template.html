@@ -13,7 +13,7 @@
     Company list
 </div>
 <div class="description">
-    You chose: Student jobs, Internships, Business Management & Law, Marketing Communication & Language
+    You chose: {{ getSelections() }}
 </div>
 <div class="filter">
     <div class="filter--button" [class.choosed]="(filter$ | async) == 0" (click)="filter$.next(0)">All companies</div>
@@ -26,27 +26,12 @@
         <div class="list--item__hall">Hall</div>
         <div class="list--item__stall">Stall</div>
     </li>
-    <li class="list--item" [routerLink]="['/company', 'adsensus']">
-        <div class="list--item__name">Adensus</div>
-        <div class="list--item__hall">A</div>
-        <div class="list--item__stall">14</div>
-    </li>
-    <li class="list--item">
-        <div class="list--item__name">PwC</div>
-        <div class="list--item__hall">B</div>
-        <div class="list--item__stall">35</div>
-    </li>
-    <li class="list--item" [routerLink]="['/company', 'Cobham SATCOM']">
+    <li class="list--item" *ngFor="let company of companies" [routerLink]="['/company', company.name]">
         <div class="list--item__name">
-            Novo Nordisk
-            <span class="list--item__name__presentation">Presentation: 10:30-10:45 at SPs16</span>
+            {{company.name}}
+            <span class="list--item__name__presentation" *ngIf="company.presentation">Presentation: {{company.presentation}}</span>
         </div>
-        <div class="list--item__hall">B</div>
-        <div class="list--item__stall">28</div>
-    </li>
-    <li class="list--item">
-        <div class="list--item__name">Maersk</div>
-        <div class="list--item__hall">C</div>
-        <div class="list--item__stall">44</div>
+        <div class="list--item__hall">{{company.hall}}</div>
+        <div class="list--item__stall">{{company.stall}}</div>
     </li>
 </ul>

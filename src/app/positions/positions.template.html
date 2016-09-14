@@ -13,10 +13,7 @@
     Positions:
 </div>
 <ul class="list">
-    <li class="list--item">Test 1</li>
-    <li class="list--item">Test 2</li>
-    <li class="list--item choosed">Test 3</li>
-    <li class="list--item">Test 4</li>
+    <li class="list--item" *ngFor="let position of positions" [class.choosed]="position.selected" (click)="onPositionClicked(position)">{{position.title}}</li>
 </ul>
 <div class="next">
     <div class="next--button" [routerLink]="['/profiles']">

@@ -10,18 +10,18 @@
     <span class="back--button" [routerLink]="['/companies']">Go back</span>
 </div>
 <div class="headline">
-    Danske Bank
+    {{company.name}}
 </div>
 <div class="info">
-    <div class="info--day">Day: <strong>Oct 5</strong></div>
-    <div class="info--presentation">Presentation: <strong>10:30-10:45</strong></div>
-    <div class="info--details">Hall: <strong>A</strong> Stall: <strong>7</strong></div>
+    <div class="info--day">Day: <strong>Oct {{currentDay}}</strong></div>
+    <div class="info--presentation" *ngIf="company.presentation">Presentation: <strong>{{company.presentation}}</strong></div>
+    <div class="info--details">Hall: <strong>{{company.hall}}</strong> Stall: <strong>{{company.stall}}</strong></div>
 </div>
 <div class="description">
     <span>Positions</span>
-    Student jobs, Internships, Business Management & Law, Marketing Communication & Language,
+    {{getCompanyPositions(company)}}
     <span>Profiles</span>
-    Student jobs, Internships, Business Management & Law, Marketing Communication & Language,
+    {{getCompanyProfiles(company)}}
 </div>
 <div class="map">
     <div class="map--pan">

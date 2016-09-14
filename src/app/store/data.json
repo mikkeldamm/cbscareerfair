@@ -1,75 +1,44 @@
 {
-    "positions": [
-        "Student jobs", 
-        "Project and thesis collaboration", 
-        "Internships",
-        "Graduate/Trainee positions",
-        "Full time positions"
-    ],
-    "profiles": [
-        "Economics, Finance and Accounting",
-        "Business Management and Law",
-        "Marketing, Communication and Language",
-        "IT, Innovation and Entrepreneurship",
-        "HR and Organisational Development"
-    ],
-    "companies": [
-        {
-            "name": "Accenture",
-            "url": "https://www.accenture.com/dk-en",
-            "positions": [0, 3, 4],
-            "profiles": [0, 1, 2, 3, 4],
-            "background": "rgb(170, 17, 51)",
-            "color": "rgb(255, 255, 255)"
-        },
-        {
-            "name": "Adsensus",
-            "positions": [0],
-            "profiles": [0, 1, 2, 3, 4],
-            "background": "rgb(2, 47, 82)",
-            "color": "rgb(255, 255, 255)"
-        },
-        {
-            "name": "AplhaSights",
-            "positions": [2, 3, 4],
-            "profiles": [0, 1, 2, 3],
-            "background": "#adc200",
-            "color": ""
-        },
-        {
-            "name": "ATP",
-            "positions": [0, 1, 2, 3, 4],
-            "profiles": [0, 1, 2, 3, 4],
-            "background": "#adc200",
-            "color": ""
-        },
-        {
-            "name": "Bayer",
-            "positions": [0, 1, 2, 3, 4],
-            "profiles": [0, 1, 2, 3, 4],
-            "background": "#0090c5",
-            "color": "#fff"
-        },
-        {
-            "name": "British American Tobacco",
-            "positions": [0, 1, 2, 3, 4],
-            "profiles": [0, 1, 2],
-            "background": "#fb0",
-            "color": "#027"
-        },
-        {
-            "name": "Cobham SATCOM",
-            "positions": [0, 1, 2, 3, 4],
-            "profiles": [0, 1, 2, 3, 4],
-            "background": "#00a4f2",
-            "color": "#fff"
-        },
-        {
-            "name": "Codan Forsikring",
-            "positions": [0, 4],
-            "profiles": [0, 1, 2, 3, 4],
-            "background": "#000043",
-            "color": "#ffdb78"
-        }
-    ]
+    "positions": {
+        "0": "Student jobs", 
+        "1": "Project and thesis collaboration", 
+        "2": "Internships",
+        "3": "Graduate/Trainee positions",
+        "4": "Full time positions"
+    },
+    "profiles": {
+        "0": "Economics, Finance and Accounting",
+        "1": "Business Management and Law",
+        "2": "Marketing, Communication and Language",
+        "3": "IT, Innovation and Entrepreneurship",
+        "4": "HR and Organisational Development"
+    },
+    "companies": {
+        "day1": [
+            {
+                "name": "Accenture",
+                "hall": "A",
+                "stall": 1,
+                "positions": [1, 2],
+                "profiles": [0, 1, 2, 3, 4]
+            },
+            {
+                "name": "Dansk Bank",
+                "hall": "B",
+                "stall": 2,
+                "positions": [0, 3, 4],
+                "profiles": [4, 3],
+                "presentation": "10:30-10:45 at SPs16"
+            }
+        ],
+        "day2": [
+            {
+                "name": "Accenture",
+                "hall": "A",
+                "stall": 1,
+                "positions": [1, 2],
+                "profiles": [0, 1, 2, 3, 4]
+            }
+        ]
+    }
 }
