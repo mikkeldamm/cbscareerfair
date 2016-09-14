@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Subscription } from 'rxjs/Subscription';
 
-import { StateService } from '../store';
+import { StateService, StoreService } from '../store';
 
 @Component({
     selector: 'company',
@@ -12,21 +12,34 @@ import { StateService } from '../store';
 })
 export class Company {
 
-    private _sub: Subscription;
+    private _subscription: Subscription;
 
-    constructor(private _route: ActivatedRoute, private _state: StateService) {
+    constructor(private _route: ActivatedRoute, private _state: StateService, private _store: StoreService) {
 
     }
 
     ngOnInit() {
 
-        this._sub = this._route.params.subscribe(params => {
-            console.log(params);
-        });
+        this._subscription = this._route
+            .params
+            .map(params => params['name'].toLowerCase())
+            .flatMap((name) => {
+
+                return this._store
+                    .companies
+                    .filter((company) => {
+
+                        return company.name.toLowerCase() === name;
+                    });
+            })
+            .subscribe(company => {
+
+                console.log(company);
+            });
     }
 
     ngOnDestroy() {
-        
-        this._sub.unsubscribe();
+
+        this._subscription.unsubscribe();
     }
 }
