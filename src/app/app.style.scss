@@ -27,10 +27,6 @@ body {
     min-width: 320px;
     background-color: #fff;
     color: #414042;
-    
-    @include breakpoint(large) { 
-        overflow: hidden;
-    }
 }
 
 p, input, select, button {
