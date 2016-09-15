@@ -16,7 +16,7 @@
     <li class="list--item" *ngFor="let position of positions" [class.choosed]="position.selected" (click)="onPositionClicked(position)">{{position.title}}</li>
 </ul>
 <div class="next">
-    <div class="next--button" [routerLink]="['/profiles']">
+    <div class="next--button" (click)="onNextClicked()">
         <span>Choose your profile</span>
     </div>
 </div>

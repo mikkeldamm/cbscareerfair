@@ -16,7 +16,7 @@
     <li class="list--item" *ngFor="let profile of profiles" [class.choosed]="profile.selected" (click)="onProfileClicked(profile)">{{profile.title}}</li>
 </ul>
 <div class="next">
-    <div class="next--button" [routerLink]="['/companies']">
+    <div class="next--button" (click)="onNextClicked()">
         <span>View company list</span>
     </div>
 </div>

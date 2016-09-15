@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { StoreService, StateService, Item } from '../store';
 
@@ -11,7 +12,7 @@ export class Positions implements OnInit {
 
     positions: Item[];
 
-    constructor(private _state: StateService, private _store: StoreService) {
+    constructor(private _state: StateService, private _store: StoreService, private _router: Router) {
 
     }
 
@@ -29,5 +30,20 @@ export class Positions implements OnInit {
         } else {
             this._state.removePosition(position);
         }
+    }
+
+    onNextClicked() {
+
+        if (this._state.positionsList.length <= 0) {
+
+            this.positions.forEach(position => {
+
+                position.selected = true;
+
+                this._state.addPosition(position);
+            });
+        }
+
+        this._router.navigate(['/profiles']);
     }
 }

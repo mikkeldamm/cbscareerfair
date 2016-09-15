@@ -14,7 +14,7 @@ import { StateService, StoreService } from './store';
 import { App } from './app.component';
 import { Home } from './home';
 import { Positions } from './positions';
-import { Profiles, ProfilesGuard } from './profiles';
+import { Profiles } from './profiles';
 import { Companies, CompaniesGuard } from './companies';
 import { Company } from './company';
 import { Register } from './register';
@@ -41,7 +41,6 @@ import { ThankYou  } from './thankyou';
         RouterModule.forRoot(ROUTES, { useHash: false })
     ],
     providers: [
-        ProfilesGuard,
         CompaniesGuard,
         StateService,
         StoreService

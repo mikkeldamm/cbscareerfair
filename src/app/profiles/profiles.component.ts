@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { StateService, StoreService, Item } from '../store';
 
@@ -11,7 +12,7 @@ export class Profiles {
 
     profiles: Item[];
 
-    constructor(private _state: StateService, private _store: StoreService) {
+    constructor(private _state: StateService, private _store: StoreService, private _router: Router) {
 
     }
 
@@ -29,5 +30,20 @@ export class Profiles {
         } else {
             this._state.removeProfile(profile);
         }
+    }
+
+    onNextClicked() {
+
+        if (this._state.profilesList.length <= 0) {
+
+            this.profiles.forEach(profile => {
+
+                profile.selected = true;
+
+                this._state.addProfile(profile);
+            });
+        }
+
+        this._router.navigate(['/companies']);
     }
 }
