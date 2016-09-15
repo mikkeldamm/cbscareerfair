@@ -1,6 +1,6 @@
 :host {
     display: block;
-    background-image: url("/assets/images/background.jpg");
+    background-image: url("/assets/images/background1.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -28,7 +28,7 @@
     }
 
     &--subheadline {
-        margin-top: 3em;
+        margin-top: 2em;
         margin-bottom: 0;
         padding: 0;
         font-size: 1.8em;
@@ -49,7 +49,7 @@
     border: 4px solid rgb(243, 113, 96);
     color: rgb(255, 255, 255);
     border-top: 0;
-    font-size: 1em;
+    font-size: 0.7em;
 
     &--logo {
         height: 2em;
@@ -72,13 +72,17 @@
     padding: 1.5rem;
 
     &--button {
-        background-color: rgba(255,255,255,0.85);
+        background-color: rgba(255, 255, 255, 0.85);
         color: rgb(243, 113, 96);
         padding: 1em;
         font-size: 1.6em;
-        margin-top: 1em;
+        margin-top: 0.5em;
         position: relative;
         cursor: pointer;
+
+        &:first-child {
+            margin-top: 0;
+        }
 
         &:after {
             content: "";

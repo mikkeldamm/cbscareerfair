@@ -16,7 +16,7 @@ export class CompaniesGuard implements CanActivate {
         if (shouldContinue)
             return true;
 
-        this._router.navigate(['/profiles']);
+        this._router.navigate(['/positions']);
 
         return false;
     }
