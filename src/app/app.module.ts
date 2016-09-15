@@ -2,6 +2,7 @@ import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 // Routes
 import { ROUTES } from './app.routes';
@@ -36,7 +37,8 @@ import { ThankYou  } from './thankyou';
     imports: [
         BrowserModule,
         HttpModule,
-        RouterModule.forRoot(ROUTES, { useHash: true })
+        FormsModule,
+        RouterModule.forRoot(ROUTES, { useHash: false })
     ],
     providers: [
         ProfilesGuard,
