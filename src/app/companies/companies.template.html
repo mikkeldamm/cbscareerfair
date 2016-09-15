@@ -16,6 +16,7 @@
     You chose: {{ getSelections() }}
 </div>
 <div class="filter">
+    <div class="filter--text">Choose day:</div>
     <div class="filter--button" [class.choosed]="(filter$ | async) == 0" (click)="filter$.next(0)">All companies</div>
     <div class="filter--button" [class.choosed]="(filter$ | async) == 1" (click)="filter$.next(1)">Oct. 5</div>
     <div class="filter--button" [class.choosed]="(filter$ | async) == 2" (click)="filter$.next(2)">Oct. 6</div>

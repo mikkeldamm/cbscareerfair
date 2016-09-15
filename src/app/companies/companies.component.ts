@@ -19,7 +19,7 @@ export class Companies implements OnInit {
 
     constructor(private _state: StateService, private _store: StoreService) {
 
-        this.filter$ = new BehaviorSubject<number>(this._state.currentDay);
+        this.filter$ = new BehaviorSubject<number>(0);
     }
 
     ngOnInit() {
