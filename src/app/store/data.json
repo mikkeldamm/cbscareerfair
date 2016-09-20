@@ -1,44 +1,507 @@
 {
     "positions": {
-        "0": "Student jobs", 
-        "1": "Project and thesis collaboration", 
-        "2": "Internships",
-        "3": "Graduate/Trainee positions",
-        "4": "Full time positions"
+        "0": "Positions for bachelor students",
+        "1": "Positions for master students",
+        "2": "Project and thesis collaboration",
+        "3": "Internships",
+        "4": "Graduate/Trainee positions",
+        "5": "Full-time positions"
+
     },
     "profiles": {
         "0": "Economics, Finance and Accounting",
-        "1": "Business Management and Law",
-        "2": "Marketing, Communication and Language",
-        "3": "IT, Innovation and Entrepreneurship",
-        "4": "HR and Organisational Development"
+        "1": "Marketing and Communication",
+        "2": "Business Management",
+        "3": "IT and Information in Organisations",
+        "4": "Organisational Development and Human Resources",
+        "5": "Society, Politics and Law",
+        "6": "Languages and Cultures",
+        "7": "Innovation and Entrepreneurship"
     },
     "companies": {
-        "day1": [
-            {
-                "name": "Accenture",
-                "hall": "A",
-                "stall": 1,
-                "positions": [1, 2],
-                "profiles": [0, 1, 2, 3, 4]
-            },
-            {
-                "name": "Dansk Bank",
-                "hall": "B",
-                "stall": 2,
-                "positions": [0, 3, 4],
-                "profiles": [4, 3],
-                "presentation": "10:30-10:45 at SPs16"
-            }
-        ],
-        "day2": [
-            {
-                "name": "Accenture",
-                "hall": "A",
-                "stall": 1,
-                "positions": [1, 2],
-                "profiles": [0, 1, 2, 3, 4]
-            }
-        ]
+        "day1": [{
+            "name": "Djåf",
+            "hall": "A",
+            "stall": "4",
+            "positions": [],
+            "profiles": [],
+            "presentation": ""
+        }, {
+            "name": "Danske Bank",
+            "hall": "A",
+            "stall": "3",
+            "positions": [0, 1, 2, 3, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 7],
+            "presentation": ""
+        }, {
+            "name": "DTU",
+            "hall": "A",
+            "stall": "2",
+            "positions": [0, 1, 2, 3, 5],
+            "profiles": [0],
+            "presentation": ""
+        }, {
+            "name": "CBS Case Competition",
+            "hall": "A",
+            "stall": "1",
+            "positions": [],
+            "profiles": [],
+            "presentation": ""
+        }, {
+            "name": "Volvo Cars",
+            "hall": "A",
+            "stall": "8",
+            "positions": [2, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 7],
+            "presentation": "13:45-14:00 at SPs16"
+        }, {
+            "name": "Lundalogik*",
+            "hall": "A",
+            "stall": "7",
+            "positions": [2, 3, 4, 5],
+            "profiles": [2, 3, 4, 7],
+            "presentation": "14:25-14:40 at SPs16"
+        }, {
+            "name": "SKAT*",
+            "hall": "A",
+            "stall": "6",
+            "positions": [0, 1, 2, 3, 5],
+            "profiles": [0, 1, 2, 3, 4, 5, 6, 7],
+            "presentation": "11:45-12:00"
+        }, {
+            "name": "IBM*",
+            "hall": "A",
+            "stall": "5",
+            "positions": [0, 4],
+            "profiles": [0, 1, 2, 3, 4, 7],
+            "presentation": "15:25-15:40 at SPs16"
+        }, {
+            "name": "Nykredit",
+            "hall": "A",
+            "stall": "13",
+            "positions": [0, 1, 2, 3, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 5],
+            "presentation": ""
+        }, {
+            "name": "Arla",
+            "hall": "A",
+            "stall": "12",
+            "positions": [0, 1, 2, 3, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 7],
+            "presentation": "14:05-14:20 at SPs16"
+        }, {
+            "name": "EY",
+            "hall": "A",
+            "stall": "11",
+            "positions": [0, 1, 2, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 5, 6, 7],
+            "presentation": ""
+        }, {
+            "name": "Accenture",
+            "hall": "A",
+            "stall": "10",
+            "positions": [1, 5],
+            "profiles": [0, 1, 2, 3, 4, 7],
+            "presentation": "11:05-11:20 at SPs16"
+        }, {
+            "name": "Telenor",
+            "hall": "A",
+            "stall": "9",
+            "positions": [0, 1, 2, 3, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 5, 7],
+            "presentation": ""
+        }, {
+            "name": "GN Store Nord",
+            "hall": "A",
+            "stall": "14",
+            "positions": [2, 3, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 5, 7],
+            "presentation": ""
+        }, {
+            "name": "CA",
+            "hall": "A",
+            "stall": "18",
+            "positions": [],
+            "profiles": [],
+            "presentation": ""
+        }, {
+            "name": "PwC*",
+            "hall": "A",
+            "stall": "19",
+            "positions": [0, 1, 2, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 5, 6, 7],
+            "presentation": "10:05-10:20 at SPs16"
+        }, {
+            "name": "Novo Nordisk",
+            "hall": "A",
+            "stall": "20",
+            "positions": [0, 1, 3, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 5],
+            "presentation": "12:25-12:40 at SPs16"
+        }, {
+            "name": "British American Tobacco",
+            "hall": "A",
+            "stall": "17",
+            "positions": [0, 1, 2, 4, 5],
+            "profiles": [0, 1, 2, 4, 5],
+            "presentation": "13:25-13:40 at SPs16"
+        }, {
+            "name": "Deloitte",
+            "hall": "A",
+            "stall": "16",
+            "positions": [0, 1, 2, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 5, 6, 7],
+            "presentation": "11:25-11:40 at SPs16"
+        }, {
+            "name": "Akademikernes",
+            "hall": "A",
+            "stall": "15",
+            "positions": [],
+            "profiles": [],
+            "presentation": ""
+        }, {
+            "name": "NestlÃ©",
+            "hall": "B",
+            "stall": "24",
+            "positions": [0, 1, 2, 3, 4, 5],
+            "profiles": [0, 1, 3],
+            "presentation": ""
+        }, {
+            "name": "Inspari*",
+            "hall": "B",
+            "stall": "23",
+            "positions": [1, 2, 4],
+            "profiles": [0, 2, 3, 7],
+            "presentation": "10:25-10:40 at SPs16"
+        }, {
+            "name": "PA Consulting Group*",
+            "hall": "B",
+            "stall": "22",
+            "positions": [1, 4, 5],
+            "profiles": [0, 2, 3, 7],
+            "presentation": "10:45-11:00 at SPs16"
+        }, {
+            "name": "William Demant",
+            "hall": "B",
+            "stall": "21",
+            "positions": [0, 1, 2, 3, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 5, 7],
+            "presentation": "12:45-13:00 at SPs16"
+        }, {
+            "name": "Danske Commodities",
+            "hall": "B",
+            "stall": "31",
+            "positions": [0, 1, 4, 5],
+            "profiles": [0, 2, 5, 7],
+            "presentation": "12:05-12:20 at SPs16"
+        }, {
+            "name": "Forsvaret",
+            "hall": "B",
+            "stall": "30",
+            "positions": [1, 2, 5],
+            "profiles": [0, 1, 3, 4, 5, 6],
+            "presentation": ""
+        }, {
+            "name": "Dream Broker",
+            "hall": "B",
+            "stall": "29",
+            "positions": [3, 4, 5],
+            "profiles": [1, 2, 3, 6, 7],
+            "presentation": "14:45-15:00 at SPs16"
+        }, {
+            "name": "Dell",
+            "hall": "B",
+            "stall": "28",
+            "positions": [2, 3, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 7],
+            "presentation": ""
+        }, {
+            "name": "Hewlett Packard Enterprise",
+            "hall": "B",
+            "stall": "27",
+            "positions": [0, 4, 5],
+            "profiles": [0, 1, 2, 3, 7],
+            "presentation": "15:45-16:00 at SPs16"
+        }, {
+            "name": "Rigsrevisionen",
+            "hall": "B",
+            "stall": "26",
+            "positions": [0, 1, 3],
+            "profiles": [0],
+            "presentation": ""
+        }, {
+            "name": "Coloplast",
+            "hall": "B",
+            "stall": "25",
+            "positions": [0, 1, 2, 3, 4, 5],
+            "profiles": [0, 1, 2, 3, 7],
+            "presentation": "13:05-13:20 at SPs16"
+        }, {
+            "name": "Google",
+            "hall": "C",
+            "stall": "32",
+            "positions": [0, 1, 3, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 5, 6, 7],
+            "presentation": "15:05-15:20 at SPs16"
+        }, {
+            "name": "Xellia",
+            "hall": "C",
+            "stall": "37",
+            "positions": [0, 1, 4, 5],
+            "profiles": [0],
+            "presentation": ""
+        }, {
+            "name": "KPMG",
+            "hall": "C",
+            "stall": "36",
+            "positions": [1, 5],
+            "profiles": [0, 2, 3],
+            "presentation": ""
+        }, {
+            "name": "Baker Tilly",
+            "hall": "C",
+            "stall": "35",
+            "positions": [0, 1, 3, 4, 5],
+            "profiles": [0, 5]
+        }],
+        "day2": [{
+            "name": "Marsh",
+            "hall": "A",
+            "stall": "4",
+            "positions": [0, 1, 2, 4, 5],
+            "profiles": [0, 1, 2, 4, 5, 7],
+            "presentation": ""
+        }, {
+            "name": "Bloomberg",
+            "hall": "A",
+            "stall": "3",
+            "positions": [0, 1, 3, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 5, 6, 7],
+            "presentation": ""
+        }, {
+            "name": "Zalando",
+            "hall": "A",
+            "stall": "2",
+            "positions": [0, 1, 3, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 5, 6, 7],
+            "presentation": ""
+        }, {
+            "name": "CBS Case Competition",
+            "hall": "A",
+            "stall": "1",
+            "positions": [],
+            "profiles": [],
+            "presentation": ""
+        }, {
+            "name": "AIG",
+            "hall": "A",
+            "stall": "8",
+            "positions": [3, 4],
+            "profiles": [0, 2, 3, 5, 7],
+            "presentation": ""
+        }, {
+            "name": "Røde Kors",
+            "hall": "A",
+            "stall": "7",
+            "positions": [3, 5],
+            "profiles": [0, 1, 2, 3, 4, 5, 6, 7],
+            "presentation": ""
+        }, {
+            "name": "Epinion",
+            "hall": "A",
+            "stall": "6",
+            "positions": [1, 2, 3, 4, 5],
+            "profiles": [1, 2, 3, 7],
+            "presentation": "10:50-11:05 at SPs16"
+        }, {
+            "name": "H&M",
+            "hall": "A",
+            "stall": "5",
+            "positions": [1, 3, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 7],
+            "presentation": "13:45-14:00 at SPs16"
+        }, {
+            "name": "Schibsted",
+            "hall": "A",
+            "stall": "13",
+            "positions": [3, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 5, 6, 7],
+            "presentation": ""
+        }, {
+            "name": "Valcon Consulting",
+            "hall": "A",
+            "stall": "12",
+            "positions": [0, 1, 2, 3, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 5, 6, 7],
+            "presentation": "11:35-11:50 at SPs16"
+        }, {
+            "name": "EF Education First",
+            "hall": "A",
+            "stall": "11",
+            "positions": [3, 4, 5],
+            "profiles": [0, 1, 2, 6, 7],
+            "presentation": "15:05-15:20 at SPs16"
+        }, {
+            "name": "Finanstilsynet",
+            "hall": "A",
+            "stall": "10",
+            "positions": [1, 5],
+            "profiles": [0],
+            "presentation": ""
+        }, {
+            "name": "ATEA",
+            "hall": "A",
+            "stall": "9",
+            "positions": [0, 1, 2, 3, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 5, 7],
+            "presentation": ""
+        }, {
+            "name": "Kapacity",
+            "hall": "A",
+            "stall": "14",
+            "positions": [4, 5],
+            "profiles": [0, 2, 3],
+            "presentation": ""
+        }, {
+            "name": "Posten Norge",
+            "hall": "A",
+            "stall": "18",
+            "positions": [2, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 7],
+            "presentation": ""
+        }, {
+            "name": "Procter & Gamble*",
+            "hall": "A",
+            "stall": "19",
+            "positions": [3, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 5, 6, 7],
+            "presentation": "14:05-14:20 at SPs16"
+        }, {
+            "name": "Maersk",
+            "hall": "A",
+            "stall": "20",
+            "positions": [0, 1, 3, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 5, 6, 7],
+            "presentation": "13:00-13:15 at SPs16"
+        }, {
+            "name": "Velux",
+            "hall": "A",
+            "stall": "17",
+            "positions": [0, 1, 2, 3, 4],
+            "profiles": [0, 1, 2, 3, 4, 5, 6, 7],
+            "presentation": ""
+        }, {
+            "name": "S&P Global",
+            "hall": "A",
+            "stall": "16",
+            "positions": [0, 1, 3, 4, 5],
+            "profiles": [0, 1, 2, 5, 6],
+            "presentation": "12:40-12:55 at SPs16"
+        }, {
+            "name": "Efficio Consulting",
+            "hall": "A",
+            "stall": "15",
+            "positions": [0, 1, 2, 3, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 5, 6, 7],
+            "presentation": "11:10-11:25 at SPs16"
+        }, {
+            "name": "Institut for Personaleudvikling",
+            "hall": "B",
+            "stall": "24",
+            "positions": [0, 1, 2, 3, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 5, 6, 7],
+            "presentation": "15:25-15:40 at SPs16"
+        }, {
+            "name": "Coca-Cola European Partners",
+            "hall": "B",
+            "stall": "23",
+            "positions": [0, 1, 2, 3, 4, 5],
+            "profiles": [0, 1, 2, 4, 5, 7],
+            "presentation": "14:45-15:00 at SPs16"
+        }, {
+            "name": "Simon-Kucher & Partners",
+            "hall": "B",
+            "stall": "22",
+            "positions": [3, 5],
+            "profiles": [0, 2],
+            "presentation": ""
+        }, {
+            "name": "Adsensus",
+            "hall": "B",
+            "stall": "21",
+            "positions": [0, 1],
+            "profiles": [0, 1, 2, 3, 4, 5, 6, 7],
+            "presentation": ""
+        }, {
+            "name": "Microsoft",
+            "hall": "B",
+            "stall": "31",
+            "positions": [0, 3, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 5, 6, 7],
+            "presentation": "10:10-10:25 at SPs16"
+        }, {
+            "name": "Diageo",
+            "hall": "B",
+            "stall": "30",
+            "positions": [0, 1, 5],
+            "profiles": [1, 2, 3, 7],
+            "presentation": "14:25-14:40 at SPs16"
+        }, {
+            "name": "Cisco*",
+            "hall": "B",
+            "stall": "29",
+            "positions": [3, 4, 5],
+            "profiles": [0, 1, 2, 3, 7],
+            "presentation": "10:30-10:45 at SPs16"
+        }, {
+            "name": "Alphasights",
+            "hall": "B",
+            "stall": "28",
+            "positions": [0, 1, 3, 4, 5],
+            "profiles": [0, 1, 2, 5, 6, 7],
+            "presentation": "12:15-12:30 at SPs16"
+        }, {
+            "name": "TDC Group",
+            "hall": "B",
+            "stall": "27",
+            "positions": [0, 1, 2, 3, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 5, 7],
+            "presentation": ""
+        }, {
+            "name": "Lidl",
+            "hall": "B",
+            "stall": "26",
+            "positions": [0, 1, 2, 3, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 5, 6, 7],
+            "presentation": ""
+        }, {
+            "name": "Saint-Gobain",
+            "hall": "B",
+            "stall": "25",
+            "positions": [0, 1, 2, 3, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 7],
+            "presentation": ""
+        }, {
+            "name": "Statoil",
+            "hall": "C",
+            "stall": "38",
+            "positions": [4],
+            "profiles": [0, 1, 2, 5, 7],
+            "presentation": "13:20-13:35 at SPs16"
+        }, {
+            "name": "Rambøll Management Consulting*",
+            "hall": "C",
+            "stall": "36",
+            "positions": [0, 1, 3, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 5, 6, 7],
+            "presentation": "11:55-12:10 at SPs16"
+        }, {
+            "name": "Teach First*",
+            "hall": "C",
+            "stall": "35",
+            "positions": [0, 1, 4, 5],
+            "profiles": [0, 1, 2, 3, 4, 5, 6, 7],
+            "presentation": "15:45-16:00 at SPs16"
+        }]
     }
 }

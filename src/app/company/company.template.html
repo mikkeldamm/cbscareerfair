@@ -10,11 +10,15 @@
     <span class="back--button" [routerLink]="['/companies']">Go back</span>
 </div>
 <div class="headline">
-    {{company.name}}
+    {{company.name.replace('*','')}}
 </div>
 <div class="info">
     <div class="info--day">Day: <strong>Oct {{currentDay}}</strong></div>
-    <div class="info--presentation" *ngIf="company.presentation">Presentation: <strong>{{company.presentation}}</strong></div>
+    <div class="info--presentation" *ngIf="company.presentation">
+        Presentation: 
+        <strong>{{company.presentation}}</strong>
+        <span *ngIf="company.name.indexOf('*') > -1">(this presentation will be held in english)</span>
+    </div>
     <div class="info--details">Hall: <strong>{{company.hall}}</strong> Stall: <strong>{{company.stall}}</strong></div>
 </div>
 <div class="description">
@@ -25,6 +29,6 @@
 </div>
 <div class="map">
     <div class="map--pan">
-        <svg></svg>
+        <company-map></company-map>
     </div>
 </div>

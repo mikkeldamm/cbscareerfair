@@ -17,6 +17,7 @@ import { Positions } from './positions';
 import { Profiles } from './profiles';
 import { Companies, CompaniesGuard } from './companies';
 import { Company } from './company';
+import { CompanyMap } from './company';
 import { Register } from './register';
 import { ThankYou  } from './thankyou';
 
@@ -31,6 +32,7 @@ import { ThankYou  } from './thankyou';
         Profiles,
         Companies,
         Company,
+        CompanyMap,
         Register,
         ThankYou
     ],

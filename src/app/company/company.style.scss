@@ -82,6 +82,12 @@
 
     &--presentation {
         float: right;
+
+        span {
+            color: #9e9e9e;
+            margin-top: 9px;
+            display: block;
+        }
     }
 
     &--day {

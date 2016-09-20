@@ -14,7 +14,6 @@
     various companies.
 </div>
 <form class="form" ngNoForm (submit)="submit($event)" method="POST" action="https://career.cbs.dk/formhandling/process.php">
-    <input type="hidden" name="form_tools_initialize_form" value="1" />
     <input type="hidden" name="form_tools_form_id" value="19" />
     <div class="form--field" [ngClass]="{error: !firstname && formSubmitted}">
         <label>First name</label>
