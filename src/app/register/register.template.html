@@ -14,7 +14,7 @@
     various companies.
 </div>
 <form class="form" ngNoForm (submit)="submit($event)" method="POST" action="https://career.cbs.dk/formhandling/process.php">
-    <input type="hidden" name="form_tools_form_id" value="18">
+    <input type="hidden" name="form_tools_form_id" value="19">
     <div class="form--field" [ngClass]="{error: !firstname && formSubmitted}">
         <label>First name</label>
         <input type="text" maxlength="100" name="firstname" [(ngModel)]="firstname" />
@@ -29,7 +29,7 @@
     </div>
     <div class="form--field" [ngClass]="{error: !status && formSubmitted}">
         <label>Status</label>
-        <select name="status[]" id="form_status" [(ngModel)]="status">
+        <select name="status" id="form_status" [(ngModel)]="status">
             <option>CBS student</option>
             <option>CBS alumni</option>
             <option>From another university</option>
@@ -38,7 +38,7 @@
     </div>
     <div class="form--field" [ngClass]="{error: !enrolment && formSubmitted}">
         <label>Enrolment</label>
-        <select name="enrolment[]" id="form_enrolment" [(ngModel)]="enrolment">
+        <select name="enrolment" id="form_enrolment" [(ngModel)]="enrolment">
             <option value="" selected="">Please select…</option>
             <optgroup label="Bachelor">
                 <option value="Bachelor, 1st year">1st year Bachelor</option>
@@ -58,7 +58,7 @@
     </div>
     <div class="form--field" [ngClass]="{error: !prgramme && formSubmitted}">
         <label>Programme</label>
-        <select name="programme[]" id="form_programme" [(ngModel)]="programme">
+        <select name="programme" id="form_programme" [(ngModel)]="programme">
             <option value="" selected="">Please select…</option>
             <optgroup label="Bachelor">
                 <option value="HA - Almen Erhvervsøkonomi">HA - Almen Erhvervsøkonomi</option>
