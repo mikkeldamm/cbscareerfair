@@ -10,7 +10,7 @@
     <span class="back--button" [routerLink]="['/']">Go back</span>
 </div>
 <div class="headline">
-    Positions:
+    Positions: <span>please choose one or more options</span>
 </div>
 <ul class="list">
     <li class="list--item" *ngFor="let position of positions" [class.choosed]="position.selected" (click)="onPositionClicked(position)">{{position.title}}</li>

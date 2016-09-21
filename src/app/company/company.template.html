@@ -10,24 +10,28 @@
     <span class="back--button" [routerLink]="['/companies']">Go back</span>
 </div>
 <div class="headline">
-    {{company.name.replace('*','')}}
+    {{company?.name.replace('*','')}}
 </div>
 <div class="info">
     <div class="info--day">Day: <strong>Oct {{currentDay}}</strong></div>
     <div class="info--presentation" *ngIf="company.presentation">
         Presentation: 
-        <strong>{{company.presentation}}</strong>
+        <strong>{{company?.presentation}}</strong>
         <span *ngIf="company.name.indexOf('*') > -1">(this presentation will be held in english)</span>
     </div>
-    <div class="info--details">Hall: <strong>{{company.hall}}</strong> Stall: <strong>{{company.stall}}</strong></div>
+    <div class="info--details">Hall: <strong>{{company?.hall}}</strong> Stall: <strong>{{company?.stall}}</strong></div>
 </div>
 <div class="description">
-    <span>Positions</span>
-    {{getCompanyPositions(company)}}
-    <span>Profiles</span>
-    {{getCompanyProfiles(company)}}
+    <div *ngIf="getCompanyPositions(company).length > 0">
+        <span>Positions</span>
+        {{getCompanyPositions(company)}}
+    </div>
+    <div *ngIf="getCompanyPositions(company).length > 0">
+        <span>Profiles</span>
+        {{getCompanyProfiles(company)}}
+    </div>
 </div>
-<div class="map">
+<div class="map" [scrollLeft]="mapPosition">
     <div class="map--pan">
         <company-map></company-map>
     </div>
