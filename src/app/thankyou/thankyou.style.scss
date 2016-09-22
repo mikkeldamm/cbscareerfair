@@ -31,6 +31,34 @@
     }
 }
 
+.back {
+    margin: 1.5rem;
+
+    &--button {
+        position: relative;
+        padding-left: 1.4em;
+        font-size: 1.3em;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        &:before {
+            content: "";
+            position: absolute;
+            left: -0.5em;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 1.8em;
+            height: 1.8em;
+            display: block;
+            background-image: url("/assets/images/arrow_left.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+}
+
 .text {
     margin: 1.5rem;
     font-size: 1.3em;

@@ -13,7 +13,11 @@
     Company list
 </div>
 <div class="description">
-    You chose: {{ getSelections() }}
+    <span class="description--header">Your choice:</span>
+    <span class="description--headers">Positions</span>
+    {{getSelectedPositions()}}
+    <span class="description--headers">Profiles</span>
+    {{getSelectedProfiles()}}
 </div>
 <div class="filter">
     <div class="filter--text">Choose day:</div>
@@ -27,12 +31,15 @@
         <div class="list--item__hall">Hall</div>
         <div class="list--item__stall">Stall</div>
     </li>
-    <li class="list--item" *ngFor="let company of companies" [routerLink]="['/company', company.name]">
+    <li  *ngFor="let company of companies" class="list--item" [ngClass]="{cutter: company.cutter}" [routerLink]="['/company', company.cutter ? '' : company.name.replace('*','')]">
         <div class="list--item__name">
-            {{company.name.replace('*','')}}
+            {{company.name}}
             <span class="list--item__name__presentation" *ngIf="company.presentation">Presentation: {{company.presentation}}</span>
         </div>
         <div class="list--item__hall">{{company.hall}}</div>
         <div class="list--item__stall">{{company.stall}}</div>
     </li>
 </ul>
+<p class="asterix">
+    * (Presentation in Danish)
+</p>

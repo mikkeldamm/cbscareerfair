@@ -6,12 +6,14 @@
         <span class="header--headline__year">2016</span>
     </h1>
 </div>
+<div class="back">
+    <span class="back--button" [routerLink]="['/']">Go back</span>
+</div>
 <div class="text">
-    At this spring’s Career Fair we have made sure that there is something for everybody, whether 
-    you are looking for inspiration for internships, student jobs, part time jobs or graduate positions!
-    <br><br>
-    Sign up and get access to company presentations, career seminars and the chance to network with 
-    various companies.
+    This fall’s Career Fair takes place 5-6 October and will for the first time be a two-day event. Whether you are looking for internships, student jobs, full-time jobs or graduate positions, more than 65 companies are ready to inspire you.
+    <br>
+    <br>
+    Sign up and get your official Career Fair key hanger and nametag and gain access to more than 30 company presentations during the fair days.
 </div>
 <form class="form" ngNoForm (submit)="submit($event)" method="POST" action="https://career.cbs.dk/formhandling/process.php">
     <input type="hidden" name="form_tools_form_id" value="19">
@@ -152,5 +154,8 @@
             </optgroup>
         </select>
     </div>
+    <i>
+        The information you provide will only be used for this event and will not be shared with any third party
+    </i>
     <button type="submit">Register</button>
 </form>

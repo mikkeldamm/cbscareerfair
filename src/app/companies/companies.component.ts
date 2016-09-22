@@ -26,7 +26,9 @@ export class Companies implements OnInit {
 
         this.filter$.subscribe((day) => {
 
-            var data = this._store.day1.concat(this._store.day2);
+            var data: Company[] = [<Company>{ name: "Oct. 5", cutter: true, positions: [], profiles: [] }]
+                .concat(this._store.day1, [{ name: "Oct. 6", cutter: true, positions: [], profiles: [] }], this._store.day2);
+
             if (day === 1) {
                 data = this._store.day1;
             } else if (day === 2) {
@@ -39,11 +41,18 @@ export class Companies implements OnInit {
         });
     }
 
-    getSelections() {
+    getSelectedPositions() {
 
         return this._state
             .positionsList
-            .concat(this._state.profilesList)
+            .map(i => i.title)
+            .join(', ')
+    }
+
+    getSelectedProfiles() {
+
+        return this._state
+            .positionsList
             .map(i => i.title)
             .join(', ')
     }
@@ -53,7 +62,7 @@ export class Companies implements OnInit {
         return this._state
             .positionsList
             .filter(item => {
-                return company.positions.length === 0 || company.positions.indexOf(item.index) > -1;
+                return company.positions && (company.positions.length === 0 || company.positions.indexOf(item.index)) > -1;
             })
             .length > 0;
     }
@@ -63,7 +72,7 @@ export class Companies implements OnInit {
         return this._state
             .profilesList
             .filter(item => {
-                return company.profiles.length === 0 || company.profiles.indexOf(item.index) > -1;
+                return company.profiles && (company.profiles.length === 0 || company.profiles.indexOf(item.index)) > -1;
             })
             .length > 0;
     }

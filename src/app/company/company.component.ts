@@ -30,16 +30,9 @@ export class Company {
             .map((name) => {
 
                 var data = this._store.day1.concat(this._store.day2);
-                if (this._state.currentDay === 1) {
-                    data = this._store.day1;
-                    this.currentDay = 5;
-                } else if (this._state.currentDay === 2) {
-                    data = this._store.day2;
-                    this.currentDay = 6;
-                }
 
                 return data.filter((company) => {
-                    return company.name.toLowerCase() === name;
+                    return company.name.replace('*','').toLowerCase() === name;
                 });
             })
             .map(companies => {
@@ -47,12 +40,12 @@ export class Company {
             })
             .subscribe(company => {
 
+                console.log(company);
+
                 if (company) {
 
                     this.company = company;
                     this.mapPosition = this.getMapPosition(company);
-
-                    console.log(this.mapPosition);
                 }
             });
     }
@@ -64,16 +57,22 @@ export class Company {
 
     getCompanyPositions(company: CompanyModel) {
 
+        if (!company)
+            return "";
+
         return this._store
             .positions
             .filter(item => {
                 return company.positions.indexOf(item.index) > -1;
             })
             .map(item => item.title)
-            .join(',');
+            .join(', ');
     }
 
     getCompanyProfiles(company: CompanyModel) {
+
+        if (!company)
+            return "";
 
         return this._store
             .profiles

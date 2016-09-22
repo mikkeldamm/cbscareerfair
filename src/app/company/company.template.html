@@ -14,10 +14,10 @@
 </div>
 <div class="info">
     <div class="info--day">Day: <strong>Oct {{currentDay}}</strong></div>
-    <div class="info--presentation" *ngIf="company.presentation">
+    <div class="info--presentation" *ngIf="company?.presentation">
         Presentation: 
         <strong>{{company?.presentation}}</strong>
-        <span *ngIf="company.name.indexOf('*') > -1">(this presentation will be held in english)</span>
+        <span *ngIf="company?.name.indexOf('*') > -1">(this presentation will be held in Danish)</span>
     </div>
     <div class="info--details">Hall: <strong>{{company?.hall}}</strong> Stall: <strong>{{company?.stall}}</strong></div>
 </div>
