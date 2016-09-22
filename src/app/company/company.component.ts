@@ -16,6 +16,7 @@ export class Company {
 
     company: CompanyModel;
     currentDay: number = 5;
+    mapPosition: number = 0;
 
     constructor(private _route: ActivatedRoute, private _state: StateService, private _store: StoreService) {
 
@@ -36,18 +37,22 @@ export class Company {
                     data = this._store.day2;
                     this.currentDay = 6;
                 }
-                    
+
                 return data.filter((company) => {
                     return company.name.toLowerCase() === name;
                 });
             })
             .map(companies => {
-                return (companies.length > 0) ? companies[0] : null;
+                return (companies.length > 0) ? companies[0] : null;
             })
             .subscribe(company => {
 
                 if (company) {
+
                     this.company = company;
+                    this.mapPosition = this.getMapPosition(company);
+
+                    console.log(this.mapPosition);
                 }
             });
     }
@@ -69,7 +74,7 @@ export class Company {
     }
 
     getCompanyProfiles(company: CompanyModel) {
-        
+
         return this._store
             .profiles
             .filter(item => {
@@ -77,5 +82,17 @@ export class Company {
             })
             .map(item => item.title)
             .join(', ');
+    }
+
+    getMapPosition(company: CompanyModel) {
+
+        if (company.hall.toLowerCase() === 'a')
+            return ((1104 - window.innerWidth) / 2) * 2;
+        if (company.hall.toLowerCase() === 'b')
+            return (1104 - window.innerWidth) / 2;
+        if (company.hall.toLowerCase() === 'c')
+            return ((1104 - window.innerWidth) / 2) / 2;
+
+        return 0;
     }
 }

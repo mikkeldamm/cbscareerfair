@@ -82,6 +82,12 @@
 
     &--presentation {
         float: right;
+
+        span {
+            color: #9e9e9e;
+            margin-top: 9px;
+            display: block;
+        }
     }
 
     &--day {
@@ -100,5 +106,21 @@
         text-transform: uppercase;
         margin-bottom: 0.4em;
         margin-top: 1em;
+    }
+}
+
+.map {
+
+    margin-top: 1.5rem;
+    border-top: 1px solid rgb(218, 218, 218);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    overflow-x: scroll;
+
+    &--pan {
+
+        padding-left: 2rem;
+        padding-right: 2rem;
+        min-width: 65em;
     }
 }

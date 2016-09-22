@@ -10,7 +10,7 @@
     <span class="back--button" [routerLink]="['/positions']">Go back</span>
 </div>
 <div class="headline">
-    Profiles:
+    Profiles: <span>please choose one or more options</span>
 </div>
 <ul class="list">
     <li class="list--item" *ngFor="let profile of profiles" [class.choosed]="profile.selected" (click)="onProfileClicked(profile)">{{profile.title}}</li>

@@ -53,7 +53,7 @@ export class Companies implements OnInit {
         return this._state
             .positionsList
             .filter(item => {
-                return company.positions.indexOf(item.index) > -1;
+                return company.positions.length === 0 || company.positions.indexOf(item.index) > -1;
             })
             .length > 0;
     }
@@ -63,7 +63,7 @@ export class Companies implements OnInit {
         return this._state
             .profilesList
             .filter(item => {
-                return company.profiles.indexOf(item.index) > -1;
+                return company.profiles.length === 0 || company.profiles.indexOf(item.index) > -1;
             })
             .length > 0;
     }

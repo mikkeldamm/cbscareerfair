@@ -29,7 +29,7 @@
     </li>
     <li class="list--item" *ngFor="let company of companies" [routerLink]="['/company', company.name]">
         <div class="list--item__name">
-            {{company.name}}
+            {{company.name.replace('*','')}}
             <span class="list--item__name__presentation" *ngIf="company.presentation">Presentation: {{company.presentation}}</span>
         </div>
         <div class="list--item__hall">{{company.hall}}</div>
