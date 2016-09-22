@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'company-map',
@@ -7,4 +7,5 @@ import { Component, OnDestroy } from '@angular/core';
 })
 export class CompanyMap {
 
+    @Input() map: number = 0;
 }

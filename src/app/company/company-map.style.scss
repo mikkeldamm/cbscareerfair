@@ -2,4 +2,21 @@
     display: block;
     position: relative;
 }
+
+.active {
+    fill: rgb(148, 193, 86);
+    transform-origin: center;
+    animation: pulse 1.5s ease-in-out infinite;
+}
  
+@keyframes pulse {
+    0% {
+        transform: scale(1.0);
+    }
+    50% {
+        transform: scale(1.4);
+    }
+    100% {
+        transform: scale(1.0);
+    }
+}
