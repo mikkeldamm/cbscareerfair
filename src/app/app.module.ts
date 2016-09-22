@@ -13,6 +13,7 @@ import { StateService, StoreService } from './store';
 // Components/directives
 import { App } from './app.component';
 import { Home } from './home';
+import { HomeBig } from './home-big';
 import { Positions } from './positions';
 import { Profiles } from './profiles';
 import { Companies, CompaniesGuard } from './companies';
@@ -28,6 +29,7 @@ import { ThankYou  } from './thankyou';
     declarations: [
         App,
         Home,
+        HomeBig,
         Positions,
         Profiles,
         Companies,

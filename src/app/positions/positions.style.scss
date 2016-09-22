@@ -1,11 +1,16 @@
+@import "../../mixins/breakpoint";
+
 :host {
     display: block;
     padding-top: 1.5rem;
-    min-height: 100%;
     box-sizing: border-box;
     background-color: #fff;
     position: relative;
     padding-bottom: 6.8rem;
+
+    @include breakpoint(large) {
+        padding-top: 0;
+    }
 }
 
 .header {
@@ -25,6 +30,10 @@
             font-size: 0.6em;
             color: #414042;
         }
+    }
+
+    @include breakpoint(large) {
+        display: none;
     }
 }
 

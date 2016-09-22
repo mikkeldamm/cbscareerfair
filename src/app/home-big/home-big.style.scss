@@ -1,7 +1,4 @@
-@import "../../mixins/breakpoint";
-
 :host {
-
     display: block;
     background-image: url("/assets/images/background1.jpg");
     background-position: center center;
@@ -10,10 +7,6 @@
     padding-top: 1.5em;
     min-height: 100%;
     box-sizing: border-box;
-
-    @include breakpoint(large) {
-        background-image: none;
-    }
 }
 
 .header {
@@ -48,10 +41,6 @@
             margin-top: 0.2em;
         }
     }
-
-    @include breakpoint(large) {
-        display: none;
-    }
 }
 
 .brand {
@@ -75,55 +64,6 @@
 
         &__strong {
             font-family: 'cbs-sans-bold', Arial, Helvetica, sans-serif;
-        }
-    }
-
-    @include breakpoint(large) {
-        display: none;
-    }
-}
-
-.buttons {
-    padding: 1.5rem;
-
-    @include breakpoint(large) {
-        padding: 1.5rem;
-        padding-top: 9em;
-        position: absolute;
-        left: 20%;
-        right: 20%;
-    }
-
-    &--button {
-        background-color: rgba(255, 255, 255, 0.85);
-        color: rgb(243, 113, 96);
-        padding: 1em;
-        font-size: 1.6em;
-        margin-top: 0.5em;
-        position: relative;
-        cursor: pointer;
-
-        @include breakpoint(large) {
-            border: 1px solid rgb(243, 113, 96);
-        }
-
-        &:first-child {
-            margin-top: 0;
-        }
-
-        &:after {
-            content: "";
-            position: absolute;
-            right: 0.8em;
-            top: 0;
-            bottom: 0;
-            margin: auto;
-            width: 1em;
-            height: 1em;
-            display: block;
-            background-image: url("/assets/images/arrow_right.svg");
-            background-position: center;
-            background-repeat: no-repeat;
         }
     }
 }
