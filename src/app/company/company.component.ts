@@ -42,8 +42,6 @@ export class Company {
             })
             .subscribe(company => {
 
-                console.log(company);
-
                 if (company) {
 
                     this.company = company;
@@ -87,12 +85,15 @@ export class Company {
 
     getMapPosition(company: CompanyModel) {
 
+        let container: any = document.querySelector('.map');
+        let containerWidth = container ? container.offsetWidth : window.innerWidth / 2;
+
         if (company.hall.toLowerCase() === 'a')
-            return ((1104 - window.innerWidth) / 2) * 2;
+            return ((1104 - containerWidth) / 2) * 2;
         if (company.hall.toLowerCase() === 'b')
-            return (1104 - window.innerWidth) / 2;
+            return (1104 - containerWidth) / 2;
         if (company.hall.toLowerCase() === 'c')
-            return ((1104 - window.innerWidth) / 2) / 2;
+            return ((1104 - containerWidth) / 2) / 2;
 
         return 0;
     }
