@@ -16,10 +16,13 @@ export class StateService {
     positions: BehaviorSubject<Item[]>;
     profiles: BehaviorSubject<Item[]>;
 
+    isFront: BehaviorSubject<boolean>;
+
     constructor(store: StoreService) {
 
         this.positions = new BehaviorSubject<Item[]>([]);
         this.profiles = new BehaviorSubject<Item[]>([]);
+        this.isFront = new BehaviorSubject<boolean>(true);
 
         this.positions.subscribe(positions => {
             this.positionsList = positions;
@@ -62,5 +65,9 @@ export class StateService {
 
     removeProfile(item: Item) {
         this.profiles.next(this.profilesList.filter(i => i.index !== item.index));
+    }
+
+    setFront(isFront: boolean) {
+        this.isFront.next(isFront);
     }
 }

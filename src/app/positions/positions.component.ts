@@ -18,6 +18,7 @@ export class Positions implements OnInit {
 
     ngOnInit() {
 
+        this._state.setFront(false);
         this.positions = this._store.positions;
     }
 

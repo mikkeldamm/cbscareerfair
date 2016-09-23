@@ -24,6 +24,8 @@ export class Company {
 
     ngOnInit() {
 
+        this._state.setFront(false);
+        
         this._subscription = this._route
             .params
             .map(params => params['name'].toLowerCase())

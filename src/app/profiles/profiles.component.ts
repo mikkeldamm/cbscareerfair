@@ -18,6 +18,7 @@ export class Profiles {
 
     ngOnInit() {
 
+        this._state.setFront(false);
         this.profiles = this._store.profiles;
     }
 

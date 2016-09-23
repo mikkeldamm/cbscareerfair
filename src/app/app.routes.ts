@@ -9,7 +9,7 @@ import { Register } from './register';
 import { ThankYou } from './thankyou';
 
 export const ROUTES: Routes = [
-    { path: '', component: Home },
+    { path: '', component: Home, data: { front: true } },
     { path: 'positions', component: Positions },
     { path: 'profiles', component: Profiles },
     { path: 'companies', component: Companies, canActivate: [CompaniesGuard]  },

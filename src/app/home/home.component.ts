@@ -15,6 +15,7 @@ export class Home {
 
     ngOnInit() {
 
+        this._state.setFront(true);
         this._state.clear();
     }
 }

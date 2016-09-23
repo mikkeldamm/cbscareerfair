@@ -1,5 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
+import { StateService } from './store';
+
 @Component({
     selector: 'cbs-app',
     encapsulation: ViewEncapsulation.None,
@@ -8,7 +10,17 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 export class App {
 
-    constructor() {
+    isFront: boolean = true;
 
+    constructor(private _state: StateService) {
+
+    }
+
+    ngOnInit() {
+
+        this._state.isFront.subscribe((isFront) => {
+
+            this.isFront = isFront;
+        });
     }
 }

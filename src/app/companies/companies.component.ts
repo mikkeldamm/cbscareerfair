@@ -24,6 +24,8 @@ export class Companies implements OnInit {
 
     ngOnInit() {
 
+        this._state.setFront(false);
+        
         this.filter$.subscribe((day) => {
 
             var data: Company[] = [<Company>{ name: "Oct. 5", cutter: true, positions: [], profiles: [] }]
@@ -52,7 +54,7 @@ export class Companies implements OnInit {
     getSelectedProfiles() {
 
         return this._state
-            .positionsList
+            .profilesList
             .map(i => i.title)
             .join(', ')
     }
