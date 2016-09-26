@@ -72,3 +72,31 @@
     margin: 1.5rem;
     font-size: 1.3em;
 }
+
+
+.button {
+    background-color: rgba(255, 255, 255, 0.85);
+    color: rgb(243, 113, 96);
+    padding: 1em;
+    font-size: 1.1em;
+    margin: 2rem auto;
+    position: relative;
+    cursor: pointer;    
+    border: 1px solid rgb(243, 113, 96);
+    max-width: 10em;
+
+    &:after {
+        content: "";
+        position: absolute;
+        right: 0.8em;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 1em;
+        height: 1em;
+        display: block;
+        background-image: url("/assets/images/arrow_right.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}

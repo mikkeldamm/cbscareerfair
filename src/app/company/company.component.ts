@@ -25,7 +25,7 @@ export class Company {
     ngOnInit() {
 
         this._state.setFront(false);
-        
+
         this._subscription = this._route
             .params
             .map(params => params['name'].toLowerCase())
@@ -34,7 +34,7 @@ export class Company {
                 var data = this._store.day1.concat(this._store.day2);
 
                 return data.filter((company) => {
-                    return company.name.replace('*','').toLowerCase() === name;
+                    return company.name.replace('*', '').toLowerCase() === name;
                 });
             })
             .map(companies => {
@@ -89,11 +89,11 @@ export class Company {
         let containerWidth = container ? container.offsetWidth : window.innerWidth / 2;
 
         if (company.hall.toLowerCase() === 'a')
-            return ((1104 - containerWidth) / 2) * 2;
+            return (((1040 - containerWidth) / 2) + 63) + 253;
         if (company.hall.toLowerCase() === 'b')
-            return (1104 - containerWidth) / 2;
+            return (((1040 - containerWidth) / 2) + 63)
         if (company.hall.toLowerCase() === 'c')
-            return ((1104 - containerWidth) / 2) / 2;
+            return (((1040 - containerWidth) / 2) + 63) - 253;
 
         return 0;
     }
